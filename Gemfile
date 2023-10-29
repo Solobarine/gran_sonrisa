@@ -9,9 +9,6 @@ gem 'rails', '~> 7.0.8'
 # Devise Authentication
 gem 'devise'
 
-# Use mysql as the database for Active Record
-gem 'mysql2'
-
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
