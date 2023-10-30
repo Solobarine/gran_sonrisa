@@ -1,4 +1,7 @@
-# frozen_string_literal: true
+
+# frozen_string_literal: true;
+
+# Migration to Create Car Model
 
 class CreateCars < ActiveRecord::Migration[7.0]
   def change
