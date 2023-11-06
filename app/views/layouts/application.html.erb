@@ -9,8 +9,31 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <section class="app">
+      <nav class="main_navigation">
+        <h1>
+          <%= link_to 'Gran Sonrisa', '/' %>
+        </h1>
+        <div class="main_links">
+          <% if current_user %>
+            <p><%= current_user.first_name %></p>
+            <%= link_to 'Logout', destroy_user_session_path %>
+          <% else %>
+            <%= link_to 'Login', new_user_session_path %>
+            <%= link_to 'Register', new_user_registration_path %>
+          <% end %>
+        </div>
+      </nav>
+      <div>
+        <p class="notice"><%= notice %></p>
+        <%= yield %>
+      </div>
+      <footer>
+        <p>
+          Copyright &copy;. All Rights Reserved. Gran Sonrisa
+        </p>
+      </footer>
+    </section
+>
   </body>
 </html>
