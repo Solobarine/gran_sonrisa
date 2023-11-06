@@ -1,0 +1,55 @@
+@import './utilities/variables';
+@import './utilities/global';
+@import './auth/login.scss';
+@import './auth/register.scss';
+
+.app {
+  background-color: $background;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.main_navigation {
+  background-color: $primary;
+  display: flex;
+  padding: 1rem;
+  padding-right: 2em;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    color: $text;
+    transition: 0.4s ease;
+  }
+
+  a:hover {
+    color: $highlight;
+    transition: 0.4s ease;
+  }
+
+  .main_links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  h1 {
+    flex-grow: 1;
+  }
+}
+
+footer {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1rem;
+  background-color: $primary;
+}
+
+// Home Index View
+
+.home {
+  display: grid;
+  place-content: center;
+}
