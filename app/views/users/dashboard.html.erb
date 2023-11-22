@@ -1,0 +1,108 @@
+<% content_for :dashboard_content do %>
+  <div id="content">
+    <div id="dashboard_section">
+      <div id="main">
+        <h1>Admin Dashboard</h1>
+        <div id="summary">
+          <div>
+            <p>Number of Cars</p>
+            <i></i>
+            <p>60</p>
+          </div>
+          <div>
+            <p>Number of Users</p>
+            <i></i>
+            <p>20</p>
+          </div>
+          <div>
+            <p>Amount Sold</p>
+            <i></i>
+            <p>&#8358; 120,000,000</p>
+          </div>
+        </div>
+        <h1>Recents</h1>
+        <div id="transaction_overview">
+          <div class="transaction">
+            <h4>Recent Purchases</h4>
+            <hr>
+            <div id="purchases">
+              <div>
+                <div class="image"><img src="" alt="" /></div>
+                <p>Toyota Camry 2023</p>
+                <p>&#8358; 30000000</p>
+                <p>Terry Lyle</p>
+              </div>
+              <div>
+                <div class="image"><img src="" alt="" /></div>
+                <p>Toyota Camry 2023</p>
+                <p>&#8358; 30000000</p>
+                <p>Terry Lyle</p>
+              </div>
+              <div>
+                <div class="image"><img src="" alt="" /></div>
+                <p>Toyota Camry 2023</p>
+                <p>&#8358; 30000000</p>
+                <p>Terry Lyle</p>
+              </div>
+            </div>
+          </div>
+          <div class="transaction">
+            <h4>Monthly Overview</h4>
+            <hr>
+            <div id="months">
+              <div>
+                <p>January</p>
+                <p>10 cars</p>
+              </div>
+              <div>
+                <p>January</p>
+                <p>10 cars</p>
+              </div>
+              <div>
+                <p>January</p>
+                <p>10 cars</p>
+              </div>
+              <div>
+                <p>January</p>
+                <p>10 cars</p>
+              </div>
+            </div>
+          </div>
+          <div class="transaction">
+            <h4>Favourite Brands</h4>
+            <hr>
+            <div id="brands">
+              <div>
+                <div><img src="" alt=""></div>
+                <p>Mercedes</p>
+              </div>
+              <div>
+                <div><img src="" alt=""></div>
+                <p>Mercedes</p>
+              </div>
+              <div>
+                <div><img src="" alt=""></div>
+                <p>Mercedes</p>
+              </div>
+              <div>
+                <div><img src="" alt=""></div>
+                <p>Mercedes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sub">
+        <% if current_user.avatar.attached? %>
+          <%= image_tag current_user.avatar, alt: current_user.first_name %>
+        <% else %>
+          <%= link_to current_user.first_name[0], profile_path, id: 'user_logo' %>
+        <% end %>
+        <p id='welcome'>Welcome Back Admin</p>
+        <p id='name'><%= current_user.first_name%> <%=  current_user.last_name %></p>
+        <p></p>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= render template: 'layouts/dashboard' %>
