@@ -1,0 +1,43 @@
+<% content_for :dashboard_content do %>
+  <div id="content">
+    <div id="favourites">
+      <h1>Favourites</h1>
+      <% if @favourites.empty? %>
+        <div id='empty_favs'>
+          <h4>You have no Favourites</h4>
+          <%= link_to 'View Cars', cars_path  %>
+        </div>
+      <% end %>
+      <div id='favs'>
+        <% @favourites.each do |favourite| %>
+          <div class='favourite'>
+            <div class='image'>
+              <%= image_tag favourite.car.images[0], alt: "text" %>
+            </div>
+            <div class='info'>
+              <div class='name_price'>
+                <a href="<%= car_path(favourite.car)%>"><%= favourite.car.manufacturer.name %> <%= favourite.car.model%></a>
+                <p>
+                  &#8358;
+                  <%= favourite.car.price %>
+                </p>
+              </div>
+              <div class="like">
+                <% if current_user.has_favourite_car(favourite.car) %>
+                  <%= button_to favourite_path(favourite), method: :delete, 'data-turbolinks-action': 'replace', 'data-turbolinks-frame': 'main' do %>
+                    <ion-icon name="heart"></ion-icon>
+                  <% end %>
+                <% else %>
+                  <%= button_to favourites_path, method: :post, 'data-turbolinks-action': 'replace', 'data-turbolinks-frame': 'main' do %>
+                    <ion-icon name="heart-outline"></ion-icon>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= render template: 'layouts/dashboard' %>

@@ -63,9 +63,9 @@ test:
   # like your database password, in your source code. If your source code is
   # ever seen by anyone, they now have access to your database.
 
-  # username: postgres
+  username: postgres
 
-  password: <%= ENV["DATABASE_PASSWORD"] %>
+  password: postgres
 #
 # Instead, provide the password or a full connection URL as an environment
 # variable when you boot the app. For example:

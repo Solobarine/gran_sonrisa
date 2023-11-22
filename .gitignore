@@ -10,6 +10,7 @@
 # Ignore .env file
 .env
 
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -32,3 +33,5 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/node_modules

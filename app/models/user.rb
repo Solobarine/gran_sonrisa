@@ -7,11 +7,22 @@ class User < ApplicationRecord
   :trackable, :confirmable
 
   # Validation
-  validates :name, presence: true
-  validates :name, length: { minimum: 2 }
+  validates :first_name, presence: true, length: { minimum: 2 }
 
-  validates :email, presence: true
-  validates :email, uniqueness: true
+  validates :last_name, presence: true, length: { minimum: 2 }
+
+  validates :email, presence: true, uniqueness: { case_sensitive: false }
+
+  validates :avatar, presence: true, on: :update
+
+
 
   # Associations
+  has_one_attached :avatar
+  has_many :favourites
+
+  # Custom Methods
+  def has_favourite_car(car_id)
+    favourites.find_by(car_id: car_id)
+  end
 end

@@ -1,0 +1,16 @@
+  <% content_for :dashboard_content do %>
+  <div id="content">
+    <div class="car_container">
+      <h3 class="title">Top Models</h3>
+      <div class="cars">
+        <%= render partial: "car", collection: @cars %>
+      </div>
+    </div>
+    <div class="car_container">
+      <h3 class="title">Top Brands</h3>
+      <div class="manufacturers">
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= render template: 'layouts/dashboard'%>

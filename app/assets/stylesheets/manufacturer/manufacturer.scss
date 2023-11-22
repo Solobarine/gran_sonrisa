@@ -1,0 +1,145 @@
+@import '../utilities//variables';
+
+.manufacturer_item {
+  $color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--secondary);
+  border-radius: 0.5em;
+  overflow: hidden;
+  gap: 0.75em;
+
+  img {
+    padding: 0.2em;
+    flex-grow: 1;
+    height: 100%;
+    height: 7em;
+    object-fit: contain;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em;
+    text-align: center;
+    color: var(--text);
+    background-color: var(--secondary);
+    transition: 0.5s ease-in;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.show_makers {
+  display: grid;
+  padding: 0.4em;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  align-items: start;
+  gap: 0.5em 1em;
+
+  h1 {
+    grid-column: 1 / -1;
+    padding: 1em 0;
+  }
+}
+
+/** CREATE MANUFACTURER **/
+.create_manufacturer {
+  display: grid;
+  gap: 1em;
+  padding: 0.3em;
+  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+  max-width: 35em;
+
+  > div {
+    padding: 1em 0.4em;
+    width: 100%;
+    margin: 0 auto;
+
+    form {
+      margin-top: 2em;
+      display: grid;
+      gap: 1em;
+      grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+
+      > *:not(button) {
+        padding: 0.7em;
+        border-radius: 0.7em;
+        border: 1px solid var(--accent-four);
+      }
+
+      textarea {
+        grid-column: 1 / -1;
+      }
+
+      ::placeholder {
+        color: var(--text);
+      }
+
+      input[type='submit'] {
+        max-width: 15em;
+        padding: 1em;
+        border-radius: 1em;
+        outline: none;
+        font-weight: bold;
+        border: none;
+        color: var(--text);
+        background-color: var(--primary);
+        transition: 0.5s ease;
+      }
+
+      input[type='submit']:hover {
+        scale: 1.05;
+        box-shadow: 1em 0.6em 0.6em 0.6em var(--secondary);
+      }
+    }
+  }
+}
+
+/** SHOW MANUFACTURER **/
+#manufacturer {
+  padding: 0.5em;
+  > h3 {
+    margin: 0.6em 0;
+  }
+
+  > img {
+    width: 100%;
+    display: block;
+    max-width: 15em;
+  }
+  #cars_container {
+    #other_manufacturers {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      transition: 0.5s ease-in-out;
+    }
+
+    #other_manufacturers:hover {
+      text-decoration: underline;
+      background-color: var(--primary);
+      padding: 0.5em;
+      white-space: nowrap;
+      border-radius: 0.5em;
+    }
+  }
+
+  #cars_container.empty {
+    display: grid;
+    place-content: center;
+    text-align: center;
+    gap: 0.6em;
+    padding: 2em 0;
+    background-color: var(--accent-four);
+  }
+
+  #cars_container.not_empty {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12em, 15em));
+    gap: 0.5em 2em;
+  }
+}

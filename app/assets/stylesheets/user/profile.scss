@@ -1,0 +1,116 @@
+@import '../utilities/variables';
+
+#profile {
+  max-width: 50em;
+  padding: 1em 0.5em;
+  #img_container {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    img {
+      margin-top: 1em;
+      display: block;
+      width: 8em;
+      aspect-ratio: 1 / 1;
+      background-color: var(--primary);
+      clip-path: circle(50%);
+      flex-shrink: 0;
+    }
+
+    #image_sub {
+      display: grid;
+      place-items: center;
+      margin-top: 1em;
+      width: 6em;
+      aspect-ratio: 1 / 1;
+      background-color: var(--primary);
+      clip-path: circle(50%);
+      flex-shrink: 0;
+
+      p {
+        font-size: 4em;
+        font-weight: bold;
+      }
+    }
+
+    #update_avatar {
+      border: 3px dashed var(--primary);
+      border-radius: 0.5em;
+      padding: 0.5em 1em;
+      #upload_avatar {
+        background: transparent;
+        display: flex;
+        align-items: center;
+        gap: 0.6em;
+        cursor: pointer;
+
+        ion-icon {
+          font-size: 1.2em;
+          flex-shrink: 0;
+        }
+      }
+
+      #avatar {
+        display: none;
+      }
+
+      #file_name {
+        margin: 1em 0;
+        font-size: 0.7em;
+      }
+
+      input[type='submit'] {
+        border: none;
+        padding: 0.5em 1em;
+        border-radius: 0.5em;
+        background-color: var(--primary);
+        color: var(--text);
+        cursor: pointer;
+      }
+    }
+  }
+  #details {
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17em, 1fr));
+    gap: 0.5em 2em;
+
+    .info {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1em;
+      padding: 0.5em;
+      border-bottom: 1px solid var(--highlight);
+
+      ion-icon {
+        font-size: 2em;
+      }
+
+      :last-child {
+        flex-grow: 1;
+        text-align: right;
+      }
+    }
+  }
+
+  #edit_profile_link {
+    width: 10em;
+    margin-top: 2em;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: var(--text);
+    font-weight: bold;
+    background-color: var(--primary);
+    padding: 0.5em;
+    border-radius: 0.5em;
+    transition: 0.5s ease-in-out;
+  }
+
+  #edit_profile_link:hover {
+    box-shadow:
+      1px 3px 5px var(--secondary),
+      3px 4px 3px var(--highlight);
+  }
+}

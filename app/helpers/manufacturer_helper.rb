@@ -1,0 +1,2 @@
+module ManufacturerHelper
+end

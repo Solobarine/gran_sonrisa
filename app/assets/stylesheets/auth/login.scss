@@ -1,0 +1,84 @@
+@import '../utilities/variables';
+@import '../utilities/global';
+
+.login_page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 25em;
+    background: var(--secondary);
+    box-shadow: 1em 2em 3em var(--accent-four);
+    border-radius: 1em;
+    padding: 1em;
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text);
+    transition: 0.4s ease;
+    padding-top: 1em;
+  }
+
+  a:hover {
+    color: var(--highlight);
+  }
+
+  // Form
+  form {
+    display: grid;
+    width: 100%;
+    text-align: left;
+    gap: 1em;
+    margin: 1em 0;
+
+    // Field Input
+    .field:not(:has([type='checkbox'])) {
+      gap: 0.5em;
+      display: grid;
+
+      input {
+        border: 1px solid var(--accent-four);
+        padding: 1em;
+        border-radius: 0.6em;
+      }
+    }
+
+    .field:has([type='checkbox']) {
+      margin-top: 1em;
+    }
+
+    // Submit Button
+    input[type='submit'] {
+      width: 100%;
+      padding: 1em;
+      border: none;
+      border-radius: 0.6em;
+      margin-top: 1rem;
+      background-color: var(--primary);
+      color: var(--secondary);
+      transition: 0.4s ease;
+    }
+
+    input[type='submit']:hover {
+      transition: 0.4s ease;
+      border: 1px solid var(--secondary);
+    }
+  }
+
+  .other_links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+}

@@ -1,0 +1,26 @@
+<div class="car">
+  <div id="main">
+    <div id="image_container">
+      <% if car.images.attached? %>
+        <%= image_tag(url_for(car.images[0]), alt: car.model) %>
+      <% end %>
+    </div>
+    <p><b>&#8358; <%= number_with_delimiter(car.price)%></b></p>
+  </div>
+  <div class="details">
+    <%= link_to "#{car.manufacturer.name} #{car.model}", car_path(car.id) %>
+    <% if current_user.has_favourite_car(car.id) %>
+      <%= form_with url: favourite_path(current_user.has_favourite_car(car.id)), method: :delete do |f| %>
+        <%= f.hidden_field :car_id, value: car.id %>
+        <button type="submit"><ion-icon name="heart"></ion-icon>
+        </button>
+      <% end %>
+    <% else %>
+      <%= form_with url: favourites_path,method: :post do |f| %>
+        <%= f.hidden_field :car_id, value: car.id %>
+        <button type="submit"><ion-icon name="heart-outline"></ion-icon>
+        </button>
+      <% end %>
+    <% end %>
+  </div>
+</div>

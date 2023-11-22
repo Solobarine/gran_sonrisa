@@ -1,0 +1,19 @@
+<% content_for :dashboard_content do %>
+  <div id="content" class="create_manufacturer">
+    <div>
+      <h1>New Manufacturer</h1>
+      <%= form_with model: @manufacturer do |f| %>
+        <%= f.text_field :name, placeholder: 'Name...' %>
+        <% if @manufacturer.errors[:name].any? %>
+          <% @manufacturer.errors[:name].each do |error| %>
+            <p><%= error %> </p>
+          <% end %>
+        <% end %>
+        <%= f.file_field :logo %>
+        <%= f.text_area :description, size: '30x10', placeholder: 'Info About the Manufacturer...' %>
+        <%= f.submit 'Create Manufacturer' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<%= render template: 'layouts/dashboard' %>

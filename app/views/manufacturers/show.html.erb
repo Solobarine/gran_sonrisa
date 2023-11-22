@@ -1,0 +1,21 @@
+<% content_for :dashboard_content do %>
+  <div id="content">
+    <div id='manufacturer'>
+      <% if @manufacturer.logo.attached? %>
+        <%= image_tag @manufacturer.logo, alt: @manufacturer.name %>
+      <% end %>
+      <h1><%= @manufacturer.name %></h1>
+      <p><%= @manufacturer.description %></p>
+      <h3>Cars From Manufacturer</h3>
+      <div id='cars_container' class="<%= @cars.empty? ? 'empty' : 'not_empty'%>">
+        <% if @cars.empty? %>
+          <p>Currently, No Cars from this Manufacturer are Avaliable</p>
+          <%= link_to 'See Other Manufacturers', manufacturers_path, id: 'other_manufacturers' %>
+        <% else %>
+          <%= render partial: 'cars/car', collection: @cars %>
+        <%end%>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= render template: 'layouts/dashboard' %>
