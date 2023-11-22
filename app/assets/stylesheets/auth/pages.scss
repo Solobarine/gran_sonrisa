@@ -1,0 +1,54 @@
+#page {
+  min-height: 80dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.5em;
+
+  > div {
+    padding: 1em 0.7em;
+    gap: 0.6em;
+    width: 100%;
+    max-width: 30em;
+    border-radius: 0.6em;
+    box-shadow: 1em 1em 3em var(--primary);
+    background-color: var(--secondary);
+
+    form {
+      display: grid;
+      gap: 1em;
+
+      .field {
+        display: grid;
+        gap: 0.4em;
+        margin-top: 0.4em;
+
+        input {
+          padding: 0.75em;
+          border: none;
+          outline: none;
+          border-radius: 0.5em;
+        }
+      }
+
+      .actions {
+        input {
+          padding: 1em;
+          border: none;
+          border-radius: 0.5em;
+          background-color: var(--primary);
+          cursor: pointer;
+        }
+      }
+    }
+
+    a {
+      display: block;
+      margin-top: 0.5em;
+      align-self: start;
+      text-decoration: none;
+      color: var(--text);
+    }
+  }
+}

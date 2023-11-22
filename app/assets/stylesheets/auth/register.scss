@@ -16,8 +16,8 @@
     padding: 1em;
     width: 100%;
     max-width: 30em;
-    background: $secondary;
-    box-shadow: 1em 2em 3em $accent-four;
+    background: var(--secondary);
+    box-shadow: 1em 2em 3em var(--accent-four);
   }
 
   a {
@@ -25,13 +25,13 @@
     display: block;
     flex-grow: 0;
     text-decoration: none;
-    color: $text;
+    color: var(--text);
     margin-bottom: 0.6em;
     transition: 0.4s ease;
   }
 
   a:hover {
-    color: $highlight;
+    color: var(--highlight);
   }
 
   // Form
@@ -49,7 +49,7 @@
       input {
         padding: 1em;
         border-radius: 0.6em;
-        border: 1px solid $accent-four;
+        border: 1px solid var(--accent-four);
       }
     }
 
@@ -63,14 +63,14 @@
       border: none;
       border-radius: 0.6em;
       margin-top: 1rem;
-      background-color: $primary;
-      color: $secondary;
+      background-color: var(--primary);
+      color: var(--text);
       transition: 0.4s ease;
     }
 
     input[type='submit']:hover {
       transition: 0.4s ease;
-      border: 1px solid $secondary;
+      border: 1px solid var(--secondary);
     }
   }
 }

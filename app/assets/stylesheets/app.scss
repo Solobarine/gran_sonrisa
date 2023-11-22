@@ -1,30 +1,36 @@
 @import './utilities/variables';
 @import './utilities/global';
-@import './auth/login.scss';
-@import './auth/register.scss';
 
 .app {
-  background-color: $background;
+  position: relative;
+  background-color: var(--background);
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 }
 
 .main_navigation {
-  background-color: $primary;
+  position: sticky;
+  top: 0;
+  background-color: var(--primary);
+  border-bottom: 1px solid var(--text);
   display: flex;
   padding: 1rem;
   padding-right: 2em;
   align-items: center;
+  z-index: 20;
 
-  a {
+  :is(button, a) {
+    background-color: var(--primary);
+    border: none;
     text-decoration: none;
-    color: $text;
+    color: var(--text);
+    font-weight: 600;
     transition: 0.4s ease;
   }
 
-  a:hover {
-    color: $highlight;
+  :is(button, a):hover {
+    color: var(--highlight);
     transition: 0.4s ease;
   }
 
@@ -32,6 +38,23 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    img {
+      width: 2em;
+      clip-path: circle(50%);
+      background-size: cover;
+    }
+
+    #user_logo {
+      text-decoration: none;
+      display: grid;
+      place-items: center;
+      font-weight: bold;
+      width: 2em;
+      aspect-ratio: 1 / 1;
+      clip-path: circle(50%);
+      background-color: var(--background);
+    }
   }
 
   h1 {
@@ -41,10 +64,62 @@
 
 footer {
   display: grid;
-  place-items: center;
-  text-align: center;
   padding: 1rem;
-  background-color: $primary;
+  background-color: var(--primary);
+
+  #main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 1em;
+    gap: 0.7em;
+
+    > div {
+      display: grid;
+
+      small {
+        white-space: nowrap;
+      }
+      *:is(h1, h5) {
+        margin-bottom: 0.7em;
+      }
+    }
+  }
+
+  #acknoledgement {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1em 3em;
+    padding: 1em 0;
+
+    #socials {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+
+      a {
+        text-decoration: none;
+        font-size: 1.2em;
+        color: var(--text);
+        transition: 0.5s ease;
+
+        svg {
+          width: 1em;
+          aspect-ratio: 1 / 1;
+          fill: var(--text);
+          transition: 0.5s ease;
+        }
+      }
+
+      :is(a, svg):hover {
+        color: var(--secondary);
+        fill: var(--secondary);
+      }
+    }
+  }
 }
 
 // Home Index View
@@ -52,4 +127,17 @@ footer {
 .home {
   display: grid;
   place-content: center;
+}
+
+// Error Element Style
+.flash {
+  position: absolute;
+  right: 1em;
+  top: 0.5em;
+}
+
+@media screen and (max-width: 600px) {
+  .main_navigation {
+    padding-right: 1rem;
+  }
 }

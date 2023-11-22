@@ -1,0 +1,70 @@
+// EDIT USER STYLES
+#edit_user {
+  padding: 1em 0.3em;
+  #form_container {
+    max-width: 40em;
+    margin: auto;
+  }
+  form {
+    display: grid;
+
+    gap: 0.7em 2em;
+    .field {
+      display: grid;
+      gap: 0.5em;
+
+      input {
+        padding: 1em;
+        border-radius: 0.5em;
+      }
+    }
+
+    #update {
+      margin-top: 1.5em;
+      background-color: var(--primary);
+      color: var(--text);
+      font-weight: bold;
+      border: none;
+      border-radius: 0.5em;
+      padding: 1em 1.8em;
+    }
+  }
+
+  hr {
+    border: 2px solid var(--accent-one);
+  }
+  #account_removal {
+    padding: 0.3em;
+    padding-bottom: 1em;
+    color: var(--accent-one);
+
+    p {
+      font-weight: bold;
+    }
+
+    button {
+      max-width: 12em;
+      white-space: nowrap;
+      margin-top: 1.4em;
+      background-color: var(--accent-one);
+      color: var(--text);
+      font-weight: bold;
+      border: none;
+      border-radius: 0.5em;
+      padding: 1em 1.8em;
+    }
+  }
+
+  .go_back {
+    margin: 0.3em;
+    display: block;
+    margin-top: 1em;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 800;
+  }
+
+  .go_back:hover {
+    text-decoration: underline;
+  }
+}
