@@ -1,0 +1,67 @@
+<% content_for :dashboard_content do %>
+  <div id="content">
+    <div id="new_car">
+      <h1>New Car</h1>
+      <%= form_with model: @car, id: 'new_car_form' do |f| %>
+        <div>
+          <%= f.label 'Manufacturer'%>
+          <select name="manufacturer_id">
+            <% @manufacturers.each do |manufacturer| %>
+              <option value="<%= manufacturer.id%>"><%= manufacturer.name %></option>
+            <% end %>
+          </select>
+        </div>
+        <div>
+          <%= f.label 'Car Model'%>
+          <%= f.text_field :model, placeholder: 'Car Model...' %>
+        </div>
+        <div>
+          <%= f.label 'Body Style'%>
+          <%= f.text_field :body_style, placeholder: 'e.g Sportcar' %>
+        </div>
+        <div>
+          <%= f.label 'Fuel Type'%>
+          <%= f.text_field :fuel_type, placeholder: 'e.g Electric' %>
+        </div>
+        <div>
+          <%= f.label 'Engine'%>
+          <%= f.text_field :engine, placeholder: 'e.g 240kW' %>
+        </div>
+        <div>
+          <%= f.label 'Transmission'%>
+          <%= f.text_field :transmission, placeholder: 'e.g Manual' %>
+        </div>
+        <div>
+          <%= f.label 'Drive'%>
+          <%= f.text_field :drive_train, placeholder: 'e.g 4WD' %>
+        </div>
+        <div>
+          <%= f.label 'Car Mileage'%>
+          <%= f.number_field :mileage, placeholder: 'e.g 130' %>
+        </div>
+        <div>
+          <%= f.label 'Car Color'%>
+          <%= f.text_field :color, placeholder: 'e.g Green' %>
+        </div>
+        <div>
+          <%= f.label 'Year Released'%>
+          <%= f.number_field :year, placeholder: 'e.g 2021' %>
+        </div>
+        <div>
+          <%= f.label 'Price'%>
+          <%= f.number_field :price, placeholder: 'e.g 50000' %>
+        </div>
+        <div>
+          <%= f.label :images %>
+          <%= f.file_field :images, multiple: true %>
+        </div>
+        <div id="description">
+          <%= f.label 'Enter Description' %>
+          <%= f.text_area :description, placeholder: 'Description', size: '30x10' %>
+        </div>
+        <button type="submit">Add Car</button>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<%= render template: "layouts/dashboard"%>
