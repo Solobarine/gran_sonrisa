@@ -1,0 +1,63 @@
+<div class="dashboard_menu">
+  <i class="fa-solid fa-bars" id="menu_toggle"
+></i>
+  <div id="menu_links">
+    <% if current_user.admin %>
+      <%= link_to('/dashboard', class: "menu_link #{is_active?('/dashboard')}") do %>
+        <ion-icon name="bar-chart"></ion-icon>
+        <p>Dashboard</p>
+      <% end %>
+    <% end %>
+    <%= link_to(cars_path, class: "menu_link #{is_active?(cars_path)}") do %>
+      <i class="fa-solid fa-car"></i>
+      <p>Cars</p>
+    <% end %>
+    <%= link_to(manufacturers_path, class: "menu_link #{is_active?(manufacturers_path)}") do %>
+      <i class="fa-solid fa-industry"></i>
+      <p>Manufacturers</p>
+    <% end %>
+    <%= link_to(categories_path, class: "menu_link #{is_active?(categories_path)}") do %>
+      <i class="fa-solid fa-layer-group"></i>
+      <p>Categories</p>
+    <% end %>
+    <% if current_user.admin %>
+      <%= link_to(new_car_path, class: "menu_link #{is_active?(new_car_path)}") do %>
+        <i class="fa-solid fa-square-plus"></i>
+        <p>New Car</p>
+      <% end %>
+      <%= link_to(new_manufacturer_path, class: "menu_link #{is_active?(new_manufacturer_path)}") do %>
+        <i class="fa-solid fa-up-right-from-square"></i>
+        <p>New Manufacturer</p>
+      <% end %>
+    <% end %>
+    <a href="#" class="menu_link">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <p>Orders
+      </p>
+    </a>
+    <%= link_to(favourites_path, class: "menu_link #{is_active?(favourites_path)}") do %>
+      <i class="fa-solid fa-star"></i>
+      <p>Favourites</p>
+    <% end %>
+    <%= link_to(profile_path, class: "menu_link #{is_active?(profile_path)}") do %>
+      <i class="fa-solid fa-id-card"></i>
+      <p>Profile</p>
+    <% end %>
+    <a href="#" class="menu_link">
+      <i class="fa-solid fa-screwdriver-wrench"></i>
+      <p>Settings</p>
+    </a>
+  </div>
+  <a href="#" class="logout_link">
+    <i class="fa-solid fa-right-from-bracket"></i>
+    <p>Logout</p>
+  </a>
+</div>
+<script defer>
+  const toggle = document.getElementById('menu_toggle')
+  const menu = document.querySelector('.dashboard_menu')
+  toggle.addEventListener('click', () => {
+  toggle.classList.toggle('open')
+  menu.classList.toggle('open')
+  })
+</script>
