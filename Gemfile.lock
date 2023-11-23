@@ -359,6 +359,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   letter_opener
+  matrix
   pg (~> 1.1)
   prawn
   puma (~> 5.0)
