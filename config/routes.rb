@@ -14,6 +14,4 @@ Rails.application.routes.draw do
   post '/initialize', to: 'orders#initialize_transaction'
   resources :manufacturers
   resources :favourites, only: %i[index create destroy]
-
-  match '*unmatched', to: 'application#not_found_method', via: :all
 end
