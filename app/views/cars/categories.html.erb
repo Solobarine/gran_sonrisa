@@ -1,0 +1,47 @@
+<% content_for :dashboard_content do %>
+  <div id="content">
+    <div id="categories">
+      <div class="category">
+        <div class="overlay"></div>
+        <%= image_tag 'sportscar.jpg', alt: "Sportscar" %>
+        <a href="#">Sportscar</a>
+      </div>
+      <div class="category">
+        <div class="overlay"></div>
+        <%= image_tag 'suv.jpg', alt: "SUV" %>
+        <a href="#">SUV</a>
+      </div>
+      <div class="category">
+        <div class="overlay"></div>
+        <%= image_tag 'coupe.jpg', alt: "Coupe" %>
+        <a href="#">Coupe</a>
+      </div>
+      <div class="category">
+        <div class="overlay"></div>
+        <%= image_tag 'truck.jpg', alt: "Truck" %>
+        <a href="#">Trucks</a>
+      </div>
+      <div class="category">
+        <div class="overlay"></div>
+        <%= image_tag 'electric.jpg', alt: "Electric" %>
+        <a href="#">Electric</a>
+      </div>
+      <div class="category">
+        <div class="overlay"></div>
+        <%= image_tag 'hybrid.jpg', alt: "Hybrid" %>
+        <a href="#">Hybrid</a>
+      </div>
+      <div class="category">
+        <div class="overlay"></div>
+        <%= image_tag 'luxury.jpg', alt: "Luxury" %>
+        <a href="#">Luxury</a>
+      </div>
+      <div class="category">
+        <div class="overlay"></div>
+        <%= image_tag 'petrol.jpg', alt: "Petrol" %>
+        <a href="#">Petrol</a>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= render template: 'layouts/dashboard'%>

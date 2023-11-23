@@ -1,0 +1,11 @@
+<% content_for :dashboard_content do %>
+  <div id="content">
+    <div class="show_makers">
+      <h1>Manufacturers</h1>
+      <% @manufacturers.each do |manufacturer| %>
+        <%= render "manufacturers/manufacturer", manufacturer: manufacturer %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<%= render template: 'layouts/dashboard' %>

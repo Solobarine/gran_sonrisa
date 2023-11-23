@@ -1,0 +1,91 @@
+@import '../utilities/variables';
+
+#favourites {
+  h1 {
+    padding-top: 1em;
+    grid-column: 1 / -1;
+  }
+
+  #empty_favs {
+    display: grid;
+    place-content: center;
+    * {
+      display: block;
+      text-align: center;
+      margin-top: 1.2em;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  #favs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12em, 16em));
+    gap: 1em 2em;
+    padding: 0.5em;
+
+    .favourite {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--primary);
+      border-radius: 0.5em;
+      overflow: hidden;
+
+      .image {
+        flex-grow: 1;
+
+        img {
+          width: 100%;
+          height: 6em;
+          object-fit: cover;
+        }
+      }
+
+      .info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2em;
+        padding: 0.5em;
+        border-top: 1px solid var(--text);
+        border-radius: 0.6em;
+
+        .name_price {
+          flex-grow: 1;
+
+          a {
+            text-decoration: none;
+            color: var(--text);
+          }
+
+          a:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .like {
+          form {
+            button {
+              display: grid;
+              place-items: center;
+              font-size: 1.5em;
+              background-color: var(--primary);
+              color: var(--accent-one);
+              border: none;
+              outline: none;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}

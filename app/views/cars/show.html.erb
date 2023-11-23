@@ -1,0 +1,185 @@
+<% content_for :dashboard_content do %>
+  <div id="content">
+    <div id="show_car">
+      <div id="car_info">
+        <div id="car_intro">
+          <h6><%= @car.manufacturer.name %> <%= @car.model %></h6>
+          <h1><%= @car.year %> <%= @car.body_style %></h1>
+          <small>
+            <ion-icon name="time-outline"></ion-icon>
+            ADDED: <%= time_ago_in_words(@car.created_at, include_seconds: false)+' ago' %>
+          </small>
+          <div id="image_and_price">
+            <% if !@car.images.attached? %>
+              <h3>Car Images Unavaliable</h3>
+            <% else %>
+              <div id="car_images">
+                <% @car.images.each do |image| %>
+                  <%= image_tag image, alt: "Car" %>
+                <% end %>
+              </div>
+            <% end %>
+            <h1 id="price"><b>Price:</b> &#8358; <%= number_with_delimiter(@car.price) %></h1>
+          </div>
+        </div>
+        <div id="action_links">
+          <%= form_with url: '/initialize', method: :post do |f| %>
+            <%= f.hidden_field :id, value: @car.id %>
+            <button type="submit">
+              <ion-icon name="cash-outline"></ion-icon>
+              Purchase
+            </button>
+          <% end %>
+          <a href="#" id="phone_no">
+            <ion-icon name="call-outline"></ion-icon>
+            09322222222
+          </a>
+          <a href="#" id="email">
+            <ion-icon name="mail-outline"></ion-icon>
+            Message Us
+          </a>
+          <% if current_user.admin %>
+            <%= button_to car_path(@car), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete', 'data-turbolinks-action': 'replace', 'data-turbolinks-frame': 'main' do %>
+              <ion-icon name="trash-outline"></ion-icon>
+              Delete Car
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div id="car_description">
+        <h3>Car Description</h3>
+        <p><%= @car.description %></p>
+      </div>
+      <div id="car_features">
+        <div class="car_feature">
+          <i class="fa-solid fa-car-side"></i>
+          <small>Body</small>
+          <p><%= @car.body_style %></p>
+        </div>
+        <div class="car_feature">
+          <i class="fa-solid fa-gas-pump"></i>
+          <small>Fuel Type</small>
+          <p><%= @car.fuel_type %></p>
+        </div>
+        <div class="car_feature">
+          <svg xmlns="http://www.w3.org/2000/svg" id="mdi-engine" viewBox="0 0 24 24"><path d="M7,4V6H10V8H7L5,10V13H3V10H1V18H3V15H5V18H8L10,20H18V16H20V19H23V9H20V12H18V8H12V6H15V4H7Z" /></svg>
+          <small>Engine</small>
+          <p><%= @car.engine %></p>
+        </div>
+        <div class="car_feature">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.75C6.89137 2.75 2.75 6.89137 2.75 12C2.75 17.1086 6.89137 21.25 12 21.25C17.1086 21.25 21.25 17.1086 21.25 12C21.25 6.89137 17.1086 2.75 12 2.75ZM1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12ZM8 8.25C8.41421 8.25 8.75 8.58579 8.75 9V11.25H11.25V9C11.25 8.58579 11.5858 8.25 12 8.25C12.4142 8.25 12.75 8.58579 12.75 9V11.25H13C13.4762 11.25 13.7958 11.2496 14.0433 11.2327C14.284 11.2163 14.4012 11.1868 14.4784 11.1549C14.7846 11.028 15.028 10.7846 15.1548 10.4784C15.1868 10.4012 15.2163 10.284 15.2327 10.0433C15.2496 9.79579 15.25 9.4762 15.25 9C15.25 8.58579 15.5858 8.25 16 8.25C16.4142 8.25 16.75 8.58579 16.75 9V9.02526C16.75 9.46972 16.75 9.84075 16.7292 10.1454C16.7076 10.4625 16.661 10.762 16.5407 11.0524C16.2616 11.7262 15.7262 12.2616 15.0524 12.5407C14.762 12.661 14.4625 12.7076 14.1454 12.7292C13.8408 12.75 13.4697 12.75 13.0253 12.75H12.75V15C12.75 15.4142 12.4142 15.75 12 15.75C11.5858 15.75 11.25 15.4142 11.25 15V12.75H8.75V15C8.75 15.4142 8.41421 15.75 8 15.75C7.58579 15.75 7.25 15.4142 7.25 15V9C7.25 8.58579 7.58579 8.25 8 8.25Z"/>
+          </svg>
+          <small>Transmission</small>
+          <p><%= @car.transmission %></p>
+        </div>
+        <div class="car_feature">
+          <i class="fa-solid fa-gears"></i>
+          <small>Drive</small>
+          <p><%= @car.drive_train %></p>
+        </div>
+        <div class="car_feature">
+          <i class="fa-solid fa-road"></i>
+          <small>Mileage</small>
+          <p><%= @car.mileage %></p>
+        </div>
+      </div>
+      <div id="car_summary">
+        <h1>Car Summary</h1>
+        <ul>
+          <li>
+            <div>
+              <i class="fa-solid fa-car-side"></i>
+              <small>Body</small>
+            </div>
+            <p><%= @car.body_style%></p>
+          </li>
+          <li>
+            <div>
+              <i class="fa-solid fa-road"></i>
+              <small>Mileage</small></div>
+            <p><%= @car.mileage %> mi</p>
+          </li>
+          <li>
+            <div>
+              <i class="fa-solid fa-gas-pump"></i>
+              <small>Fuel Type</small>
+            </div>
+            <p><%= @car.fuel_type%></p>
+          </li>
+          <li>
+            <div>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.75C6.89137 2.75 2.75 6.89137 2.75 12C2.75 17.1086 6.89137 21.25 12 21.25C17.1086 21.25 21.25 17.1086 21.25 12C21.25 6.89137 17.1086 2.75 12 2.75ZM1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12ZM8 8.25C8.41421 8.25 8.75 8.58579 8.75 9V11.25H11.25V9C11.25 8.58579 11.5858 8.25 12 8.25C12.4142 8.25 12.75 8.58579 12.75 9V11.25H13C13.4762 11.25 13.7958 11.2496 14.0433 11.2327C14.284 11.2163 14.4012 11.1868 14.4784 11.1549C14.7846 11.028 15.028 10.7846 15.1548 10.4784C15.1868 10.4012 15.2163 10.284 15.2327 10.0433C15.2496 9.79579 15.25 9.4762 15.25 9C15.25 8.58579 15.5858 8.25 16 8.25C16.4142 8.25 16.75 8.58579 16.75 9V9.02526C16.75 9.46972 16.75 9.84075 16.7292 10.1454C16.7076 10.4625 16.661 10.762 16.5407 11.0524C16.2616 11.7262 15.7262 12.2616 15.0524 12.5407C14.762 12.661 14.4625 12.7076 14.1454 12.7292C13.8408 12.75 13.4697 12.75 13.0253 12.75H12.75V15C12.75 15.4142 12.4142 15.75 12 15.75C11.5858 15.75 11.25 15.4142 11.25 15V12.75H8.75V15C8.75 15.4142 8.41421 15.75 8 15.75C7.58579 15.75 7.25 15.4142 7.25 15V9C7.25 8.58579 7.58579 8.25 8 8.25Z"/>
+              </svg>
+              <small>Transmission</small>
+            </div>
+            <p><%= @car.transmission %></p>
+          </li>
+          <li>
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" id="mdi-engine" viewBox="0 0 24 24"><path d="M7,4V6H10V8H7L5,10V13H3V10H1V18H3V15H5V18H8L10,20H18V16H20V19H23V9H20V12H18V8H12V6H15V4H7Z" /></svg>
+              <small>Engine</small></div>
+            <p><%= @car.engine %>
+            </p>
+          </li>
+          <li>
+            <div>
+              <i class="fa-solid fa-calendar-days"></i>
+              <small>Year</small></div>
+            <p><%= @car.year %></p>
+          </li>
+          <li>
+            <div>
+              <i class="fa-solid fa-gears"></i>
+              <small>Drive</small></div>
+            <p><%= @car.drive_train %></p>
+          </li>
+          <li>
+            <div>
+              <ion-icon name="contrast-outline"></ion-icon>
+              <small>Color</small></div>
+            <p><%= @car.color %></p>
+          </li>
+          <li>
+            <div>
+              <i class="fa-solid fa-industry"></i>
+              <small>Make</small></div>
+            <p><%= @car.manufacturer.name %></p>
+          </li>
+        </ul>
+      </div>
+      <div id="assurance">
+        <h1>Gran Sonrisa Quality</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maxime repellendus sit, illum eum dolore error. Doloribus obcaecati cupiditate eveniet?</p>
+        <ul>
+          <li>
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+            <p>Passed our through 300 point inspection</p>
+          </li>
+          <li>
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+            <p>Cars come with a minimum of 2.5mm tyre threads</p>
+          </li>
+          <li>
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+            <p>Had a recent service or MOT, if required</p>
+          </li>
+          <li>
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+            <p>All Vehicle Photos of imperfections, if needed</p>
+          </li>
+          <li>
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+            <p>Completed a Road Test by our Technicians</p>
+          </li>
+          <li>
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+            <p>Used Cars Reconditioned to our High Standards</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= render template: "layouts/dashboard"%>

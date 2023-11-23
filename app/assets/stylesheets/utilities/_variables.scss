@@ -1,0 +1,61 @@
+:root {
+  --primary-dark: #3997ca;
+  --secondary-dark: #444;
+  --background-dark: #888;
+  --text-dark: #fff;
+  --accent-one-dark: #ff0000;
+  --accent-two-dark: #ffff00;
+  --accent-three-dark: #0c880c;
+  --accent-four-dark: #555;
+  --highlight-dark: #ffd700;
+
+  --primary-light: #3997ca;
+  --secondary-light: #c0c0c0;
+  --background-light: #f5f5f5;
+  --text-light: #222;
+  --accent-one-light: #ff0000;
+  --accent-two-light: #ffff00;
+  --accent-three-light: #0c880c;
+  --accent-four-light: #555;
+  --highlight-light: #ffd700;
+
+  --primary: #3997ca;
+  --secondary: #c0c0c0;
+  --background: #f5f5f5;
+  --text: #444;
+  --accent-one: #ff0000;
+  --accent-two: #ffff00;
+  --accent-three: #00ff00;
+  --accent-four: #808080;
+  --highlight: #ffd700;
+
+  --keep: #0077b6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: var(--primary-dark);
+    --secondary: var(--secondary-dark);
+    --background: var(--background-dark);
+    --text: var(--text-dark);
+    --accent-one: var(--accent-one-dark);
+    --accent-two: var(--accent-two-dark);
+    --accent-three: var(--accent-three-dark);
+    --accent-four: var(--accent-four-dark);
+    --highlight: var(--highlight-dark);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary: var(--primary-light);
+    --secondary: var(--secondary-light);
+    --background: var(--background-light);
+    --text: var(--text-light);
+    --accent-one: var(--accent-one-light);
+    --accent-two: var(--accent-two-light);
+    --accent-three: var(--accent-three-light);
+    --accent-four: var(--accent-four-light);
+    --highlight: var(--highlight-light);
+  }
+}

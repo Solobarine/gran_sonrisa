@@ -1,4 +1,4 @@
-## Table of Content
+# Table of Content
 
 - [Welcome](#welcome)
   - [Welcome to Gran Sonrisa](#welcome-to-gran-sonrisa-your-ultimate-car-purchasing-solution)
@@ -38,6 +38,10 @@ The car purchasing app described here utilizes a combination of technologies to 
 
 - **Devise**: Devise is a Ruby on Rails gem for seamless user authentication. It's flexible, secure, and customizable, making it easy to add features like user registration, password reset, and more to your web app. It supports multiple authentication strategies, and it's well-documented with a strong community.
 
+- **JavaScript:** JavaScript: Versatile web language, adds interactivity, manipulates DOM. High-level syntax, client-side scripting. Core for modern web development.
+
+- **Paystack:** Nigerian fintech company, acquired by Stripe in 2020. Offers online payment solutions for businesses across Africa. Streamlines transactions, supports various payment methods, and enhances financial inclusivity.
+
 - **SASS (Syntactically Awesome Style Sheets)**: SASS is a CSS preprocessor that enhances the styling capabilities of CSS. It provides features like variables, nesting, mixins, and more, allowing for cleaner and more maintainable stylesheets.
 
 ## 📜 Key Features
@@ -54,14 +58,11 @@ The car purchasing app described here utilizes a combination of technologies to 
 ### 👥 Customer Features
 
 - **Extensive New Car Database**: Explore a vast collection of the latest new car models from a wide range of manufacturers. From compact cars to SUVs, electric vehicles to luxury sedans, find the perfect match for your preferences.
-- **Model Configurator**: Customize your dream car using the model configurator. Choose colors, trims, packages, and optional features to visualize how your new car will look before you even visit a dealership.
 - **Saved Favorites and Notifications**: Save your favorite cars to a personalized list for easy reference. Receive notifications when the price drops on a car you're interested in or when similar vehicles become available.
 - **Secure Payment Options**: Once you've found your ideal car, complete the purchase securely through the app. Make payments, sign contracts, and handle paperwork electronically to streamline the buying process.
-- **User Reviews and Community Feedback**: Read user reviews and ratings for dealerships and sellers to ensure a trustworthy and reliable transaction. Contribute to the community by sharing your own experiences.
 - **Detailed Specifications**: Access comprehensive specifications for each new car model, including performance details, fuel efficiency, safety features, technology integrations, and more.
-- **Digital Booking and Reservation**: Reserve your chosen new car model through the app, securing your spot at the dealership. Choose a convenient date and time for a personalized consultation and test drive.
 - **Transparent Transaction Process**: Receive a detailed breakdown of the costs associated with your new car purchase, including taxes, fees, and any additional add-ons. No hidden surprises.
-- **Digital Contracts and Signatures**: Streamline the paperwork process by signing contracts digitally. Review and sign documents securely within the app, reducing the time spent at the dealership.
+
 - **Delivery and After-Sales Services**: Coordinate the delivery of your new car to your preferred location. Access after-sales services, maintenance schedules, and support information through the app.
   Gran Sonrisa is not just an app; it's a comprehensive tool that empowers you to make well-informed decisions when purchasing a car. Say goodbye to the hassle of traditional car shopping and say hello to a modern, user-friendly, and efficient car purchasing experience with Gran Sonrisa.
 
@@ -77,8 +78,13 @@ The car purchasing app described here utilizes a combination of technologies to 
 #### 📊📈 Admin Dashboard
 
 - Admins have access to a dashboard that displays essential statistics:
-  - Total number of cars listed.
-  - Total number of cars sold.
+  - Total number of Cars Listed.
+  - Total number of Cars Sold.
+  - Number of Users
+  - Revenue Generated
+  - Recent Purchases
+  - Sales Breakdown according to Months
+  - Most Purchased Brands
 
 ## 💻 Installation
 
@@ -135,7 +141,8 @@ Follow these steps to set up Gran Sonrisa Car Purchasing App locally:
 
 - Name: **Solomon Barine Akpuru**
 - GitHub: [@solobarine](https://github.com/solobarine)
-- LinkedIn: [solomon-akpuru](https://www.linkedin.com/in/solomon-akpuru)
+- LinkedIn: [solomon-akpuru](https://linkedin.com/in/solomon-akpuru)
+- WellFound: [solomon-akpuru](https://wellfound.com/u/solomon-akpuru)
 
 ## 🤝 Contributing
 
