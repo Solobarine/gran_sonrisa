@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root 'home#index'
+  get '/', to: 'home#index'
   devise_for :users
   resources :cars
   get '/categories', to: 'cars#categories'
