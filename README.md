@@ -93,7 +93,7 @@ Follow these steps to set up Gran Sonrisa Car Purchasing App locally:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/gran-sonrisa.git
+   git clone https://github.com/solobarine/gran-sonrisa.git
    ```
 
 2. Navigate to the Project Directory:
@@ -102,7 +102,7 @@ Follow these steps to set up Gran Sonrisa Car Purchasing App locally:
    cd gran_sonrisa
    ```
 
-3. Install Backend Dependencies:
+3. Install Dependencies:
 
    ```bash
    cd backend
@@ -116,26 +116,11 @@ Follow these steps to set up Gran Sonrisa Car Purchasing App locally:
    rails db:migrate
    ```
 
-5. Install Frontend Dependencies:
+5. Start the Servers:
 
-   ```bash
-   cd ../frontend
-   npm install
-   ```
-
-6. Start the Servers:
-
-- In the Backend Directory
-
-  ```bash
-  rails s
-  ```
-
-- In the Frontend Directory
-
-  ```bash
-  npm run dev
-  ```
+```bash
+rails s
+```
 
 ## 👤 Author
 
