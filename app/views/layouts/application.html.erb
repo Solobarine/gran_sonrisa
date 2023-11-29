@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path('logo.svg')%>
     <%# javascript_importmap_tags %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,9 +15,10 @@
   <body>
     <section class="app">
       <nav class="main_navigation">
-        <h1>
-          <%= link_to 'Gran Sonrisa', '/' %>
-        </h1>
+        <%= link_to('/', class: 'logo') do %>
+          <%= image_tag 'logo.svg', alt: "Logo" %>
+          <h1>Gran Sonrisa</h1>
+        <% end %>
         <div class="main_links">
           <div id="themeBtn">
           </div>
