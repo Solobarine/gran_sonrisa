@@ -15,9 +15,9 @@
   background-color: var(--primary);
   border-bottom: 1px solid var(--text);
   display: flex;
-  padding: 1rem;
   padding-right: 2em;
   align-items: center;
+  justify-content: space-between;
   z-index: 20;
 
   :is(button, a) {
@@ -32,6 +32,16 @@
   :is(button, a):hover {
     color: var(--highlight);
     transition: 0.4s ease;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+
+    img {
+      width: 4em;
+    }
   }
 
   .main_links {
@@ -139,5 +149,11 @@ footer {
 @media screen and (max-width: 600px) {
   .main_navigation {
     padding-right: 1rem;
+
+    .logo {
+      h1 {
+        display: none;
+      }
+    }
   }
 }
