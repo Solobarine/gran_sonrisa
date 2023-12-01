@@ -20,13 +20,18 @@
     box-shadow: 1em 2em 3em var(--accent-four);
   }
 
+  hr {
+    border-top: 1px solid var(--text);
+    margin: 0.5em 0;
+  }
+
   a {
-    text-align: center;
+    width: fit-content;
     display: block;
     flex-grow: 0;
     text-decoration: none;
     color: var(--text);
-    margin-bottom: 0.6em;
+    margin-bottom: 0.3em;
     transition: 0.4s ease;
   }
 
@@ -36,21 +41,32 @@
 
   // Form
   form {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(200px), 1fr));
     text-align: left;
     gap: 1em 1.5em;
-    margin: 2em 0;
+    margin: 0.2em 0;
 
     .field {
       display: grid;
       gap: 0.4em;
+      margin-top: 0.75em;
 
       input {
         padding: 1em;
         border-radius: 0.6em;
         border: 1px solid var(--accent-four);
       }
+    }
+
+    .field_with_errors {
+      display: grid;
+    }
+
+    .form_errors {
+      margin-left: 0.3em;
+      color: var(--accent-one);
+      list-style-type: none;
+      font-size: 0.7em;
+      font-weight: 600;
     }
 
     .actions {
