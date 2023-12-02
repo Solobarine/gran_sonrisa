@@ -1,7 +1,12 @@
 <section class="login_page">
   <div>
     <h2>Log in</h2>
+    <hr>
     <%= form_for(resource, as: resource_name, class: 'login_page', url: session_path(resource_name)) do |f| %>
+      <% if flash.alert %>
+        <p class="flash"><%= flash.alert %></p>
+      <% end %>
+      <%= render 'devise/shared/errors', errors: resource.errors['email'] %>
       <div class="field">
         <%= f.label :email %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -20,6 +25,7 @@
         <%= f.submit "Log in" %>
       </div>
     <% end %>
+    <hr>
     <div class="other_links">
       <%= render "devise/shared/links" %>
     </div>

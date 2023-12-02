@@ -1,0 +1,8 @@
+<ul class='form_errors'>
+  <% if errors.nil? %>
+  <% else %>
+    <% errors.each do |error| %>
+      <li><%= error%></li>
+    <% end %>
+  <% end %>
+</ul>

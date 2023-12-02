@@ -30,6 +30,9 @@ gem 'dotenv-rails'
 # Send Http Requests
 gem 'httparty'
 
+# Add AWS S3 Storage Support
+gem 'aws-sdk-s3', require: false
+
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
 

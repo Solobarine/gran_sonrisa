@@ -2,17 +2,14 @@
 @import '../utilities/global';
 
 .login_page {
-  height: 100%;
+  min-height: 85vh;
+  min-height: 85dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
   > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     width: 100%;
     max-width: 25em;
     background: var(--secondary);
@@ -22,16 +19,21 @@
   }
 
   a {
+    width: fit-content;
     display: block;
-    text-align: center;
     text-decoration: none;
     color: var(--text);
     transition: 0.4s ease;
-    padding-top: 1em;
+    padding-top: 0.3em;
   }
 
   a:hover {
     color: var(--highlight);
+  }
+
+  hr {
+    border-top: 1px solid var(--text);
+    margin-top: 0.5em;
   }
 
   // Form
@@ -39,8 +41,8 @@
     display: grid;
     width: 100%;
     text-align: left;
-    gap: 1em;
-    margin: 1em 0;
+    gap: 0.3em;
+    margin: 0.3em 0;
 
     // Field Input
     .field:not(:has([type='checkbox'])) {
@@ -73,6 +75,17 @@
     input[type='submit']:hover {
       transition: 0.4s ease;
       border: 1px solid var(--secondary);
+    }
+
+    .flash {
+      color: var(--accent-one);
+      text-align: center;
+      font-weight: 600;
+      padding: 0.5em 2em;
+      border-radius: 0.5em;
+      right: 1em;
+      top: 5em;
+      z-index: 50;
     }
   }
 
