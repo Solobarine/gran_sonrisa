@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   patch '/profile', to: 'users#update'
   get '/dashboard', to: 'users#dashboard'
   post '/initialize', to: 'orders#initialize_transaction'
+  post '/webhook', to: 'orders#webhook'
   resources :manufacturers
   resources :favourites, only: %i[index create destroy]
+  resources :orders, only: %i[index show]
 end
