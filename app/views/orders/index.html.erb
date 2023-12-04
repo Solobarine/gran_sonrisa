@@ -1,0 +1,11 @@
+<% content_for :dashboard_content do %>
+  <div id="content">
+    <div id="orders">
+      <h1>My Orders</h1>
+      <% 5.times do %>
+        <%= render 'order' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<%= render template: 'layouts/dashboard' %>

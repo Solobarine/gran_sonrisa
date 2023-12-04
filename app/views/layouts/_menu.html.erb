@@ -30,11 +30,11 @@
         <p>New Manufacturer</p>
       <% end %>
     <% end %>
-    <a href="#" class="menu_link">
+    <%= link_to(orders_path, class: "menu_link #{is_active?(orders_path)}") do %>
       <i class="fa-solid fa-bag-shopping"></i>
       <p>Orders
       </p>
-    </a>
+    <% end %>
     <%= link_to(favourites_path, class: "menu_link #{is_active?(favourites_path)}") do %>
       <i class="fa-solid fa-star"></i>
       <p>Favourites</p>
