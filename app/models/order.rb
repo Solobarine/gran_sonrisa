@@ -2,8 +2,8 @@
 
 class Order < ApplicationRecord
   # Association
-  has_one :user
-  has_one :car
+  belongs_to :user
+  belongs_to :car
 
   # Validations
   validates :status, inclusion: { in: %w[pending processing completed cancelled] }
@@ -13,11 +13,7 @@ class Order < ApplicationRecord
     includes(:car, :user).order(created_at: :desc).limit(5)
   end
 
-  def self.five_months_sale
-  
-  end
+  def self.five_months_sale; end
 
-  def self.top_brands
-    
-  end
+  def self.top_brands; end
 end
