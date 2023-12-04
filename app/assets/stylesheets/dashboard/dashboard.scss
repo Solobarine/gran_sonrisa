@@ -56,7 +56,7 @@
     }
 
     .menu_link:is(:hover, .active) {
-      color: var(--secondary);
+      color: var(--highlight);
       transform: translateX(1em);
     }
 
