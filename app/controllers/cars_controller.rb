@@ -57,23 +57,23 @@ class CarsController < ApplicationController
   end
 
   private
-    def car_params
-      params.require(:car).permit(:model,
-      :body_style,
-      :mileage,
-      :color,
-      :transmission,
-      :engine,
-      :fuel_type,
-      :drive_train,
-      :year,
-      :price,
-      :description,
-      images: []
-      )
-    end
 
-    def images_empty?
-      params[:images].empty?
-    end
+  def car_params
+    params.require(:car).permit(:model,
+                                :body_style,
+                                :mileage,
+                                :color,
+                                :transmission,
+                                :engine,
+                                :fuel_type,
+                                :drive_train,
+                                :year,
+                                :price,
+                                :description,
+                                images: [])
+  end
+
+  def images_empty?
+    params[:images].empty?
+  end
 end

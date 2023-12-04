@@ -4,7 +4,7 @@ class FavouritesController < ApplicationController
   end
 
   def create
-    return unless !Favourite.is_favourite(current_user, params[:car_id])
+    return if Favourite.is_favourite(current_user, params[:car_id])
 
     @car = Car.find(params[:car_id])
     @favourite = Favourite.new
@@ -28,7 +28,7 @@ class FavouritesController < ApplicationController
       redirect_to request.referer
     end
   end
-  
+
   private
 
   def fav_params
