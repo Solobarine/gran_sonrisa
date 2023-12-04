@@ -3,8 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
   devise :database_authenticatable, :registerable,
-  :recoverable, :rememberable, :validatable,
-  :trackable, :confirmable
+         :recoverable, :rememberable, :validatable,
+         :trackable, :confirmable
 
   # Validation
   validates :first_name, presence: true, length: { minimum: 2 }
@@ -15,14 +15,13 @@ class User < ApplicationRecord
 
   validates :avatar, presence: true, on: :update
 
-
-
   # Associations
   has_one_attached :avatar
   has_many :favourites
+  has_many :orders
 
   # Custom Methods
   def has_favourite_car(car_id)
-    favourites.find_by(car_id: car_id)
+    favourites.find_by(car_id:)
   end
 end
