@@ -20,6 +20,7 @@ class OrdersController < ApplicationController
     car = Car.find(params[:id])
     reference = "SONRISA-#{uuid.generate}"
     puts car.price
+    puts ENV['PAYSTACK_SECRET_KEY']
 
     url = 'https://api.paystack.co/transaction/initialize'
 
