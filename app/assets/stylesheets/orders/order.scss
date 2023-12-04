@@ -1,0 +1,54 @@
+// Order Partial
+.order {
+  border-radius: 0.5em;
+  overflow: hidden;
+  box-shadow: 1em 1em 1.2em 0.3em var(--secondary);
+  .image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background-color: var(--primary);
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .details {
+    display: grid;
+    padding: 0.5em;
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    background-color: var(--background);
+
+    p {
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+      font-weight: 600;
+
+      span {
+        font-size: 0.9em;
+      }
+    }
+
+    p:nth-child(2n) {
+      justify-content: flex-end;
+      align-items: flex-end;
+      text-align: right;
+    }
+  }
+}
+
+// Orders Page
+
+#orders {
+  display: grid;
+  padding: 1em;
+  flex-wrap: wrap;
+  gap: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+  padding-bottom: 3em;
+
+  h1 {
+    grid-column: 1 / -1;
+  }
+}
