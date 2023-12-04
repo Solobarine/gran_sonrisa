@@ -2,6 +2,7 @@ class Car < ApplicationRecord
   # Associations
   has_many_attached :images
   belongs_to :manufacturer
+  has_one :order
   has_many :favourites
 
   # Validations
