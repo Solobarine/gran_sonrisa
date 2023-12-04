@@ -54,7 +54,7 @@ class OrdersController < ApplicationController
       @order.save
       redirect_to response['data']['authorization_url'], allow_other_host: true
     else
-      redirect_back
+      redirect_to car_path(car)
     end
   end
 
