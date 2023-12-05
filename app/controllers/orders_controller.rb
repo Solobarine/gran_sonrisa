@@ -19,8 +19,6 @@ class OrdersController < ApplicationController
     uuid = UUID.new
     car = Car.find(params[:id])
     reference = "SONRISA-#{uuid.generate}"
-    puts car.price
-    puts ENV['PAYSTACK_SECRET_KEY']
 
     url = 'https://api.paystack.co/transaction/initialize'
 
@@ -55,7 +53,7 @@ class OrdersController < ApplicationController
       @order.save
       redirect_to response['data']['authorization_url'], allow_other_host: true
     else
-      redirect_to car_path(car)
+      redirect_to car_path(car), notice: 'Unable to Initialize Transaction.'
     end
   end
 
