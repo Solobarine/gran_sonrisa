@@ -7,8 +7,14 @@
   border: 1px solid var(--secondary);
 
   .car_image {
-    aspect-ratio: 16 / 9;
+    height: 11em;
     background-color: var(--secondary);
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
   }
 
   .name_like {
@@ -35,6 +41,12 @@
     align-items: center;
     gap: 1em;
     margin: 1.5em 0;
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+    }
   }
 
   .name_like,
