@@ -1,26 +1,44 @@
 <div class="car">
-  <div id="main">
-    <div id="image_container">
-      <% if car.images.attached? %>
-        <%= image_tag(url_for(car.images[0]), alt: car.model) %>
-      <% end %>
-    </div>
-    <p><b>&#8358; <%= number_with_delimiter(car.price)%></b></p>
+  <div class='car_image'>
+    <% if car.images.attached? %>
+      <%= image_tag(url_for(car.images[0]), alt: car.model) %>
+    <% end %>
   </div>
-  <div class="details">
-    <%= link_to "#{car.manufacturer.name} #{car.model}", car_path(car.id) %>
+  <div class='name_like'>
+    <p class="name"><%= "#{car.manufacturer.name} #{car.model}" %></p>
     <% if current_user.has_favourite_car(car.id) %>
       <%= form_with url: favourite_path(current_user.has_favourite_car(car.id)), method: :delete do |f| %>
         <%= f.hidden_field :car_id, value: car.id %>
-        <button type="submit"><ion-icon name="heart"></ion-icon>
+        <button class='unlike' type="submit"><ion-icon name="heart"></ion-icon>
         </button>
       <% end %>
     <% else %>
       <%= form_with url: favourites_path,method: :post do |f| %>
         <%= f.hidden_field :car_id, value: car.id %>
-        <button type="submit"><ion-icon name="heart-outline"></ion-icon>
+        <button class='like' type="submit"><ion-icon name="heart-outline"></ion-icon>
         </button>
       <% end %>
     <% end %>
+  </div>
+  <div class="features">
+    <div>
+      <i class="fa-solid fa-road"></i>
+      <small><%= car.mileage %> miles</small>
+    </div>
+    <div>
+      <i class="fa-solid fa-gas-pump"></i>
+      <small><%= car.fuel_type %></small>
+    </div>
+    <div>
+      <i class="fa-solid fa-car"></i>
+      <small><%= car.engine %></small>
+    </div>
+  </div>
+  <div class='more'>
+    <%= link_to 'Explore More', car_path(car.id), class: 'see_more' %>
+    <div class="price">
+      <small>Great Price</small>
+      <p>&#8358;<%= number_with_delimiter(car.price) %></p>
+    </div>
   </div>
 </div>

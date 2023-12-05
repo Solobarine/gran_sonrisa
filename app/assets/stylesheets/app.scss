@@ -135,8 +135,199 @@ footer {
 // Home Index View
 
 .home {
-  display: grid;
-  place-content: center;
+  padding: 3em 0.5em;
+  width: 100%;
+  height: 100%;
+  max-width: 60em;
+  margin: auto;
+
+  #main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
+
+    #intro {
+      width: 100%;
+      max-width: 20em;
+      flex-grow: 1;
+
+      #ratings {
+        ion-icon {
+          color: var(--highlight);
+        }
+      }
+
+      #welcome b {
+        color: var(--highlight);
+      }
+
+      #links {
+        margin: 1em 0;
+        display: flex;
+        align-items: center;
+        gap: 1.2em;
+
+        a {
+          display: block;
+          text-decoration: none;
+          padding: 0.75em 0.5em;
+          border-radius: 0.4em;
+          min-width: 7em;
+          text-align: center;
+          color: var(--text);
+        }
+
+        a:first-child {
+          background-color: var(--primary);
+        }
+
+        a:last-child {
+          border: 1px solid var(--secondary);
+        }
+      }
+    }
+
+    #showcase {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      flex-grow: 1;
+      gap: 1.5em;
+
+      > div {
+        width: 100%;
+        border-radius: 0.5em;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        max-width: 10em;
+        min-height: 10em;
+        aspect-ratio: 1 / 1.5;
+        background-color: var(--secondary);
+        transition: 0.5s ease;
+
+        div {
+          overflow: hidden;
+
+          img {
+            margin-left: -40%;
+            height: 100%;
+            object-position: 0 100%;
+          }
+        }
+
+        small {
+          padding: 0.4em;
+          text-align: center;
+          border-top: 1px solid var(--secondary);
+          font-weight: 600;
+          text-transform: uppercase;
+          color: invert(#000, 100%);
+        }
+      }
+
+      > div:hover {
+        scale: 1.2;
+        box-shadow: 0 1em 1em 0.1em var(--accent-one);
+        background-color: var(--accent-one);
+      }
+    }
+  }
+
+  #offerings {
+    display: flex;
+    gap: 1em;
+    margin-top: 1.2em;
+
+    #car_placeholder {
+      max-width: 30em;
+      flex-grow: 1;
+      display: grid;
+      place-content: center;
+      flex-shrink: 1;
+      height: 15em;
+
+      img {
+        display: block;
+        width: 100%;
+        max-width: 20em;
+        min-width: 0;
+      }
+    }
+
+    > div:last-child {
+      flex-grow: 10000;
+    }
+
+    .offer {
+      display: flex;
+      align-items: center;
+      gap: 0.4em;
+      margin: 0.5em 0;
+
+      .icon {
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        width: 3em;
+        aspect-ratio: 1 / 1;
+        clip-path: circle(50%);
+        background-color: var(--primary);
+
+        img {
+          padding: 0.6em;
+        }
+      }
+    }
+  }
+
+  #why_choose {
+    flex-grow: 1;
+
+    #reasons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+      gap: 1em;
+      margin: 1.2em 0;
+
+      .reason {
+        padding: 1em 0.5em;
+        border-radius: 0.5em;
+        border: 1px solid var(--primary);
+
+        div {
+          display: flex;
+          align-items: center;
+          gap: 1em;
+        }
+
+        p {
+          margin-top: 1em;
+        }
+      }
+    }
+  }
+
+  #milestones {
+    flex-grow: 1;
+    display: flex;
+    padding: 0 0.5em;
+    margin: 1.2em 0;
+    gap: 1em 2em;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .milestone {
+      display: flex;
+      align-items: center;
+      gap: 0.75em;
+
+      h4,
+      p {
+        font-size: 1.2em;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -147,6 +338,12 @@ footer {
       h1 {
         display: none;
       }
+    }
+  }
+
+  .home {
+    #offerings {
+      flex-wrap: wrap;
     }
   }
 }

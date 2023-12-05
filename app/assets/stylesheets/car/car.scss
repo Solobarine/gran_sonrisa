@@ -1,60 +1,78 @@
 @import '../utilities/variables';
 /** CAR PARTIAL STYLES **/
 .car {
-  display: flex;
-  flex-direction: column;
+  padding: 0.4em;
   border-radius: 0.5em;
-  border: 2px solid var(--secondary);
   overflow: hidden;
+  border: 1px solid var(--secondary);
 
-  #main {
-    position: relative;
-    flex-grow: 1;
+  .car_image {
+    height: 11em;
+    background-color: var(--secondary);
 
     img {
+      height: 100%;
       width: 100%;
-      height: 7em;
       object-fit: cover;
-    }
-
-    p {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      background-color: var(--secondary);
-      padding: 0.6em 0.3em;
-      padding-left: 1.8em;
-      border-top-left-radius: 4em;
     }
   }
 
-  .details {
-    padding: 0.4em 0.5em;
+  .name_like {
+    margin-top: 0.75em;
+
+    .name {
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+  }
+
+  .unlike,
+  .like {
+    border: none;
+
+    ion-icon {
+      font-size: 2em;
+      color: var(--accent-one);
+    }
+  }
+
+  .features {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin: 1.5em 0;
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+    }
+  }
+
+  .name_like,
+  .more {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    background-color: var(--secondary);
+    // flex-wrap: wrap;
+  }
+
+  .more {
+    margin-bottom: 1.2em;
 
     a {
       text-decoration: none;
-      color: var(--text);
+      background-color: var(--primary);
+      color: invert(#000000);
+      padding: 0.5em 1em;
+      border-radius: 0.5em;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    button {
-      display: grid;
-      place-items: center;
-      color: var(--accent-one);
-      background-color: var(--secondary);
-      font-size: 1.5em;
-      font-weight: bold;
-      cursor: pointer;
-      border: none;
-      outline: none;
+    .price {
+      p {
+        font-size: 1.1em;
+        font-weight: 600;
+      }
     }
   }
 }
@@ -64,7 +82,7 @@
 
   .cars {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(12em, 15em));
+    grid-template-columns: repeat(auto-fit, minmax(15em, 18em));
     gap: 1em 2em;
     padding: 0.5em;
   }
