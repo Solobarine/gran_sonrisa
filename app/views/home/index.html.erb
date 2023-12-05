@@ -1,3 +1,150 @@
 <div class="home">
-  Welcome
+  <div id="main">
+    <div id='intro'>
+      <div>
+        <div id='ratings'>
+          <span>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+          </span>
+          <p>Based on 1200 ratings</p>
+        </div>
+      </div>
+      <h1 id='welcome'>WELCOME TO <br>
+        <b>GRAN SONRISA</b></h1>
+      <p>For Your Sedans, SUVs, Convertibles and Many More</p>
+      <div id='links'>
+        <% if user_signed_in? %>
+          <%= link_to 'See Categories', categories_path, class: 'link' %>
+          <%= link_to 'View Cars', cars_path, class: 'link' %>
+        <% else %>
+          <%= link_to 'Start Your Journey', new_user_registration_path, class: 'link' %>
+          <%= link_to 'Login', new_user_session_path, class: 'link' %>
+        <% end %>
+      </div>
+    </div>
+    <div id='showcase'>
+      <div>
+        <div>
+          <%= image_tag 'accord.png', alt: "New Cars" %>
+        </div>
+        <small>New Cars</small>
+      </div>
+      <div>
+        <div>
+          <%= image_tag 'elantra.png', alt: "Used Cars" %>
+        </div>
+        <small>Used Cars</small>
+      </div>
+      <div>
+        <div>
+          <%= image_tag 'luxury.jpg', alt: "Listings" %>
+        </div>
+        <small>Classified Listings</small>
+      </div>
+    </div>
+  </div>
+  <div id="offerings">
+    <div id='car_placeholder'>
+      <%= image_tag 'audi_a4.png', alt: "text" %>
+    </div>
+    <div>
+      <h1>What We Offer</h1>
+      <hr>
+      <div class="offer">
+        <div class='icon'>
+          <img width="50" height="50" src="https://img.icons8.com/ios/50/reservation-2.png" alt="reservation-2"/>
+        </div>
+        <div>
+          <p>
+            <b>Pre-Sale Preparation</b>
+          </p>
+          <small>We're able to offer financing rates that many other car dealers can't offer.</small>
+        </div>
+      </div>
+      <div class="offer">
+        <div class='icon'>
+          <img width="50" height="50" src="https://img.icons8.com/ios/50/card-in-use-1.png" alt="card-in-use-1"/>
+        </div>
+        <div>
+          <p>
+            <b>Financing</b>
+          </p>
+          <small>We're able to offer financing rates that many other car dealers can't offer.</small>
+        </div>
+      </div>
+      <div class="offer">
+        <div class='icon'>
+          <img width="50" height="50" src="https://img.icons8.com/ios/50/ticket-purchase.png" alt="ticket-purchase"/>
+        </div>
+        <div>
+          <p>
+            <b>Trade-in Service</b>
+          </p>
+          <small>Our service allows you to purchase a new car at an attractive price while saving you all the trouble of handling your old car.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="why_choose">
+    <h1>Why Choose Gran Sonrisa</h1>
+    <div id="reasons">
+      <div class="reason">
+        <div>
+          <img width="50" height="50" src="https://img.icons8.com/ios/50/sale--v1.png" alt="sale--v1"/>
+          <h4>Affordable Price</h4>
+        </div>
+        <p>An affordable price for a luxury car may be significantly higher than an affordable price for a budget car...</p>
+      </div>
+      <div class="reason">
+        <div>
+          <img width="50" height="50" src="https://img.icons8.com/dotty/50/cash.png" alt="cash"/>
+          <h4>Money Back Guarantee</h4>
+        </div>
+        <p>We offer a full refund with no questions asked, within 30 days of purchase...</p>
+      </div>
+      <div class="reason">
+        <div>
+          <img width="48" height="48" src="https://img.icons8.com/external-those-icons-lineal-those-icons/48/external-shield-security-those-icons-lineal-those-icons.png" alt="external-shield-security-those-icons-lineal-those-icons"/>
+          <h4>8 Month Warranty</h4>
+        </div>
+        <p>During this 8-month period, if the product fails to function properly due to a defect or malfunction...</p>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div id="milestones">
+    <div class="milestone">
+      <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/car.png" alt="car"/>
+      <div>
+        <h4>200+</h4>
+        <p>Cars Avaliable</p>
+      </div>
+    </div>
+    <div class="milestone">
+      <img width="50" height="50" src="https://img.icons8.com/external-glyph-andi-nur-abdillah/64/external-commerce-e-commerce-glyph-glyph-andi-nur-abdillah.png" alt="external-commerce-e-commerce-glyph-glyph-andi-nur-abdillah"/>
+      <div>
+        <h4>50+</h4>
+        <p>Cars Sold</p>
+      </div>
+    </div>
+    <div class="milestone">
+      <img width="50" height="50" src="https://img.icons8.com/external-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto/64/external-trophy-award-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto-9.png" alt="external-trophy-award-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto-9"/>
+      <div>
+        <h4>10+</h4>
+        <p>Awards of Excellence</p>
+      </div>
+    </div>
+    <div class="milestone">
+      <img width="50" height="50" src="https://img.icons8.com/external-outline-design-circle/66/external-Satisfaction-customer-service-outline-design-circle.png" alt="external-Satisfaction-customer-service-outline-design-circle"/>
+      <div>
+        <h4>97.00%</h4>
+        <p>Customer Satisfaction</p>
+      </div>
+    </div>
+  </div>
+  <hr>
 </div>
