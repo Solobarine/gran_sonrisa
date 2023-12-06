@@ -1,14 +1,15 @@
 <% content_for :dashboard_content do %>
   <div id="content">
     <div id="show_car">
-      <div id="car_info">
-        <div id="car_intro">
-          <h6><%= @car.manufacturer.name %> <%= @car.model %></h6>
-          <h1><%= @car.year %> <%= @car.body_style %></h1>
-          <small>
-            <ion-icon name="time-outline"></ion-icon>
-            ADDED: <%= time_ago_in_words(@car.created_at, include_seconds: false)+' ago' %>
-          </small>
+      <div id="car_intro">
+        <h6><%= @car.manufacturer.name %> <%= @car.model %></h6>
+        <h1><%= @car.year %> <%= @car.body_style %></h1>
+        <small>
+          <ion-icon name="time-outline"></ion-icon>
+          ADDED: <%= time_ago_in_words(@car.created_at, include_seconds: false)+' ago' %>
+        </small>
+        <div id="car_info"
+>
           <div id="image_and_price">
             <% if !@car.images.attached? %>
               <h3>Car Images Unavaliable</h3>
@@ -19,31 +20,24 @@
                 <% end %>
               </div>
             <% end %>
-            <h1 id="price"><b>Price:</b> &#8358; <%= number_with_delimiter(@car.price) %></h1>
           </div>
-        </div>
-        <div id="action_links">
-          <%= form_with url: '/initialize', method: :post do |f| %>
-            <%= f.hidden_field :id, value: @car.id %>
-            <button type="submit">
-              <ion-icon name="cash-outline"></ion-icon>
-              Purchase
-            </button>
-          <% end %>
-          <a href="#" id="phone_no">
-            <ion-icon name="call-outline"></ion-icon>
-            09322222222
-          </a>
-          <a href="#" id="email">
-            <ion-icon name="mail-outline"></ion-icon>
-            Message Us
-          </a>
-          <% if current_user.admin %>
-            <%= button_to car_path(@car), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete', 'data-turbolinks-action': 'replace', 'data-turbolinks-frame': 'main' do %>
-              <ion-icon name="trash-outline"></ion-icon>
-              Delete Car
+          <div id="action_links">
+            <%= form_with url: '/initialize', method: :post do |f| %>
+              <%= f.hidden_field :id, value: @car.id %>
+              <h2>&#8358; <%= number_with_delimiter(@car.price) %></h2>
+              <p>Taxes and Licensing Included</p>
+              <button type="submit">
+                <ion-icon name="cash-outline"></ion-icon>
+                Purchase
+              </button>
             <% end %>
-          <% end %>
+            <% if current_user.admin %>
+              <%= button_to car_path(@car), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete', 'data-turbolinks-action': 'replace', 'data-turbolinks-frame': 'main' do %>
+                <ion-icon name="trash-outline"></ion-icon>
+                Delete Car
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
       <div id="car_description">
