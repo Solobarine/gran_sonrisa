@@ -164,6 +164,7 @@
     #image_and_price {
       position: relative;
       width: 100%;
+      margin-bottom: 1.3em;
 
       #car_images {
         display: grid;
@@ -190,58 +191,33 @@
     }
 
     #action_links {
-      padding: 0.5em;
-      display: flex;
-      align-items: center;
-      margin-top: 1em;
-      gap: 1em;
-      flex-wrap: wrap;
-
-      a {
-        display: flex;
-        align-items: center;
-        gap: 0.7em;
-        text-decoration: none;
-        background-color: var(--primary);
-        color: var(--text);
-        padding: 0.5em;
-        border-radius: 0.3em;
-        white-space: nowrap;
-
-        ion-icon {
-          font-size: 1.2em;
-        }
-      }
+      background-color: var(--secondary);
+      flex-basis: 15em;
+      flex-shrink: 0;
+      display: grid;
+      place-content: center;
 
       form {
+        padding: 1.2em 0.5em;
+        display: grid;
+        place-content: center;
+        gap: 1.2em;
+
         button {
           display: flex;
           align-items: center;
-          background-color: var(--accent-three);
+          justify-content: center;
           gap: 1em;
           padding: 0.5em;
-          font-size: 1em;
-          border-radius: 0.3em;
+          font-size: 1.1em;
           border: none;
-          transition: 0.5s ease;
-          cursor: pointer;
-
-          ion-icon {
-            font-size: 1.3em;
-          }
-        }
-
-        button {
-          cursor: pointer;
-        }
-        button.purchase {
+          border-radius: 0.4em;
           background-color: var(--primary);
         }
-        button.delete {
-          background-color: var(--accent-one);
-        }
-        button:hover {
-          box-shadow: 0.5em 0.5em 0.5em var(--secondary);
+
+        h2 {
+          font-size: 1.4em;
+          text-align: center;
         }
       }
     }
@@ -360,36 +336,22 @@
 
 @media screen and (min-width: 800px) {
   #show_car {
-    #car_info {
-      display: flex;
-      justify-content: space-between;
+    #car_intro {
+      width: 100%;
+      // max-width: 40em;
+      flex-grow: 1;
 
-      #car_intro {
-        // display: grid;
-
-        flex-grow: 1;
-      }
-
-      #action_links {
-        background-image: linear-gradient(180deg, var(--background), var(--secondary));
-
-        display: grid;
-        place-content: center;
-        gap: 0.5em;
-
-        a {
-          width: 100%;
-        }
-      }
-
-      form {
-        display: grid;
+      #car_info {
+        display: flex;
+        align-items: flex-start;
+        // flex-wrap: wrap;
+        gap: 2em;
       }
     }
+  }
 
-    #car_features {
-      border-top-right-radius: 0;
-    }
+  #car_features {
+    border-top-right-radius: 0;
   }
 }
 

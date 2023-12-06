@@ -2,91 +2,110 @@
 @import '../utilities/global';
 
 .register_page {
-  height: 100%;
-  padding: 0.3em;
+  min-height: 85vh;
+  min-height: 85dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  > div {
-    display: flex;
-    flex-direction: column;
-    border-radius: 1.5em;
-    padding: 1em;
-    width: 100%;
-    max-width: 30em;
-    background: var(--secondary);
-    box-shadow: 1em 2em 3em var(--accent-four);
-  }
-
   hr {
-    border-top: 1px solid var(--text);
-    margin: 0.5em 0;
+    margin-top: 1em;
+    border: 1px solid var(--primary);
   }
 
-  a {
-    width: fit-content;
-    display: block;
-    flex-grow: 0;
-    text-decoration: none;
-    color: var(--text);
-    margin-bottom: 0.3em;
-    transition: 0.4s ease;
-  }
+  > div {
+    width: 100%;
+    margin: 2em 0;
+    padding: 1em;
+    max-width: 30em;
+    background-color: var(--secondary);
+    border-radius: 0.5em;
 
-  a:hover {
-    color: var(--highlight);
-  }
+    ul {
+      list-style: none;
+      font-weight: 600;
+      color: var(--accent-one);
+    }
 
-  // Form
-  form {
-    text-align: left;
-    gap: 1em 1.5em;
-    margin: 0.2em 0;
-
-    .field {
+    form {
       display: grid;
-      gap: 0.4em;
-      margin-top: 0.75em;
+      gap: 1.2em;
+      padding: 1em 0;
 
-      input {
-        padding: 1em;
-        border-radius: 0.6em;
-        border: 1px solid var(--accent-four);
+      .flash {
+        text-align: center;
+        font-weight: 600;
+        color: var(--accent-one);
+      }
+
+      .field {
+        display: grid;
+        gap: 0.5em;
+
+        > div {
+          display: grid;
+          position: relative;
+
+          i {
+            position: absolute;
+            font-size: 1.2em;
+            top: 50%;
+            left: 0.5em;
+            transform: translateY(-50%);
+            color: var(--primary);
+          }
+
+          input {
+            padding: 1em 2.5em;
+            padding-right: 1em;
+            outline: none;
+            border: none;
+            border-radius: 0.5em;
+          }
+
+          input:focus {
+            outline: 0.5px solid var(--primary);
+          }
+        }
+
+        .field_with_errors {
+          display: grid;
+        }
+      }
+
+      .actions {
+        input {
+          padding: 0.75em 2em;
+          border-radius: 0.4em;
+          font-size: 1.1em;
+          letter-spacing: 2px;
+          background-color: var(--primary);
+          color: invert(#000000);
+          border: none;
+          outline: none;
+        }
       }
     }
 
-    .field_with_errors {
-      display: grid;
-    }
+    .other_links {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      padding-top: 1.3em;
 
-    .form_errors {
-      margin-left: 0.3em;
-      color: var(--accent-one);
-      list-style-type: none;
-      font-size: 0.7em;
-      font-weight: 600;
-    }
+      a {
+        width: -moz-fit-content;
+        width: fit-content;
+        text-decoration: none;
+        color: var(--text);
+        transition: 0.5s ease;
+      }
 
-    .actions {
-      grid-column: 1 / 1;
-    }
-
-    input[type='submit'] {
-      width: 100%;
-      padding: 1em;
-      border: none;
-      border-radius: 0.6em;
-      margin-top: 1rem;
-      background-color: var(--primary);
-      color: var(--text);
-      transition: 0.4s ease;
-    }
-
-    input[type='submit']:hover {
-      transition: 0.4s ease;
-      border: 1px solid var(--secondary);
+      a:hover {
+        font-weight: 600;
+        transition: 0.5s ease;
+      }
     }
   }
 }

@@ -11,87 +11,85 @@
 
   > div {
     width: 100%;
-    max-width: 25em;
-    background: var(--secondary);
-    box-shadow: 1em 2em 3em var(--accent-four);
-    border-radius: 1em;
     padding: 1em;
-  }
+    max-width: 30em;
+    background-color: var(--secondary);
+    border-radius: 0.5em;
 
-  a {
-    width: fit-content;
-    display: block;
-    text-decoration: none;
-    color: var(--text);
-    transition: 0.4s ease;
-    padding-top: 0.3em;
-  }
+    hr {
+      margin-top: 1em;
+      border: 1px solid var(--primary);
+    }
 
-  a:hover {
-    color: var(--highlight);
-  }
-
-  hr {
-    border-top: 1px solid var(--text);
-    margin-top: 0.5em;
-  }
-
-  // Form
-  form {
-    display: grid;
-    width: 100%;
-    text-align: left;
-    gap: 0.3em;
-    margin: 0.3em 0;
-
-    // Field Input
-    .field:not(:has([type='checkbox'])) {
-      gap: 0.5em;
+    form {
       display: grid;
+      gap: 1.2em;
+      padding: 2em 0;
+      padding-bottom: 1em;
 
-      input {
-        border: 1px solid var(--accent-four);
-        padding: 1em;
-        border-radius: 0.6em;
+      .flash {
+        text-align: center;
+        font-weight: 600;
+        color: var(--accent-one);
+      }
+
+      .field {
+        display: grid;
+        position: relative;
+
+        i {
+          position: absolute;
+          font-size: 1.2em;
+          top: 50%;
+          left: 0.5em;
+          transform: translateY(-50%);
+          color: var(--primary);
+        }
+
+        input {
+          padding: 1em 2.5em;
+          padding-right: 1em;
+          outline: none;
+          border: none;
+          border-radius: 0.5em;
+        }
+
+        input:focus {
+          outline: 0.5px solid var(--primary);
+        }
+      }
+
+      .actions {
+        input {
+          padding: 0.75em 2em;
+          border-radius: 0.4em;
+          letter-spacing: 2px;
+          background-color: var(--primary);
+          color: invert(#000000);
+          border: none;
+          outline: none;
+        }
       }
     }
 
-    .field:has([type='checkbox']) {
-      margin-top: 1em;
-    }
+    .other_links {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      padding-top: 1.3em;
 
-    // Submit Button
-    input[type='submit'] {
-      width: 100%;
-      padding: 1em;
-      border: none;
-      border-radius: 0.6em;
-      margin-top: 1rem;
-      background-color: var(--primary);
-      color: var(--secondary);
-      transition: 0.4s ease;
-    }
+      a {
+        width: -moz-fit-content;
+        width: fit-content;
+        text-decoration: none;
+        color: var(--text);
+        transition: 0.5s ease;
+      }
 
-    input[type='submit']:hover {
-      transition: 0.4s ease;
-      border: 1px solid var(--secondary);
+      a:hover {
+        font-weight: 600;
+        transition: 0.5s ease;
+      }
     }
-
-    .flash {
-      color: var(--accent-one);
-      text-align: center;
-      font-weight: 600;
-      padding: 0.5em 2em;
-      border-radius: 0.5em;
-      right: 1em;
-      top: 5em;
-      z-index: 50;
-    }
-  }
-
-  .other_links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
   }
 }
