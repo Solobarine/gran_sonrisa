@@ -1,22 +1,23 @@
 <section class="login_page">
   <div>
-    <h2>Log in</h2>
+    <h3>Welcome Back</h3>
+    <small>Log in to continue</small>
     <hr>
     <%= form_for(resource, as: resource_name, class: 'login_page', url: session_path(resource_name)) do |f| %>
       <% if flash.alert %>
         <p class="flash"><%= flash.alert %></p>
       <% end %>
-      <%= render 'devise/shared/errors', errors: resource.errors['email'] %>
+      <%# render 'devise/shared/errors', errors: resource.errors['email'] %>
       <div class="field">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <i class="fa-solid fa-user"></i>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
       </div>
       <div class="field">
-        <%= f.label :password %>
-        <%= f.password_field :password, autocomplete: "current-password" %>
+        <i class="fa-solid fa-lock"></i>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password' %>
       </div>
       <% if devise_mapping.rememberable? %>
-        <div class="field">
+        <div class="remember">
           <%= f.check_box :remember_me %>
           <%= f.label :remember_me %>
         </div>
@@ -24,8 +25,8 @@
       <div class="actions">
         <%= f.submit "Log in" %>
       </div>
+      <hr>
     <% end %>
-    <hr>
     <div class="other_links">
       <%= render "devise/shared/links" %>
     </div>
