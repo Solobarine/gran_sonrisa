@@ -2,14 +2,28 @@
   <div id="content">
     <div class="car_container">
       <h3 class="title">Top Models</h3>
-      <div class="cars">
-        <%= render partial: "car", collection: @cars %>
-      </div>
+      <% if @cars.empty? %>
+        <div class="empty_collection">
+          <p>Cars List is Empty</p>
+          <p>Contact Support Team</p>
+        </div>
+      <% else %>
+        <div class="cars">
+          <%= render partial: "car", collection: @cars %>
+        </div>
+      <% end %>
     </div>
     <div class="car_container">
       <h3 class="title">Top Brands</h3>
-      <div class="manufacturers">
-      </div>
+      <% if @manufacturers.empty? %>
+        <div class="empty_collection">
+          <p>Manufacturers List is Empty</p>
+          <p>Contact Support Team</p>
+        </div>
+      <% else %>
+        <div class="manufacturers">
+        </div>
+      <% end %>
     </div>
   </div>
 <% end %>
