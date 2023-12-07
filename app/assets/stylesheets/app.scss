@@ -76,6 +76,7 @@ footer {
   display: grid;
   padding: 1rem;
   background-color: var(--primary);
+  color: var(--text);
 
   #main {
     display: flex;
@@ -329,6 +330,51 @@ footer {
     }
   }
 }
+
+// Successful Order Screen
+#order_success,
+#order_failed,
+#callback {
+  min-height: 90vh;
+  min-height: 90dvh;
+  display: grid;
+  place-items: center;
+  color: var(--text);
+  padding: 0 0.5em;
+
+  div {
+    width: 100%;
+    max-width: 40em;
+    padding: 3em 1em;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 12px 28px 0px, rgba(0, 0, 0, 0.3) 0px 2px 4px 0px,
+      rgba(255, 255, 255, 0.15) 0px 0px 0px 1px inset;
+    display: grid;
+    gap: 1em;
+    text-align: center;
+
+    * {
+      display: block;
+      margin: auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      padding: 0.6em 1.2em;
+      border-radius: 0.4em;
+      border: none;
+      background-color: var(--primary);
+    }
+  }
+}
+
+#callback {
+  img {
+    width: 3em;
+  }
+}
+
+// Failed Order Screen
 
 @media screen and (max-width: 600px) {
   .main_navigation {
