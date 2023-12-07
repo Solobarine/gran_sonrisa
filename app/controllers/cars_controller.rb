@@ -6,7 +6,11 @@ class CarsController < ApplicationController
   end
 
   def show
-    @car = Car.includes(:manufacturer).find(params[:id])
+    @car = Car.includes(:manufacturer).find_by(id: params[:id])
+
+    return unless @car.nil?
+
+    redirect_to cars_path, notice: 'Car Does not Exist'
   end
 
   def new
@@ -16,13 +20,26 @@ class CarsController < ApplicationController
 
   def categories; end
 
-  def category; end
+  def category
+    @cars = Car.where(condition: params[:condition]) if params[:condition]
+
+    @cars = Car.where(body_style: params[:body_style]) if params[:body_style]
+
+    @cars = Car.where(fuel_type: params[:fuel_type]) if params[:fuel_type]
+
+    # return unless @cars.empty?
+
+    # redirect_to categories_path, notice: 'Category empty or Not Found'
+  end
 
   def create
     # if images_empty?
     #   return redirect_to new_car_path
     # end
-    @manufacturer = Manufacturer.find(params[:manufacturer_id])
+    @manufacturer = Manufacturer.find_by(id: params[:manufacturer_id])
+
+    return unless @manufacturer
+
     @car = @manufacturer.cars.create(car_params)
     if @car.save
       redirect_to cars_path, notice: 'Car successfully created'
@@ -69,6 +86,7 @@ class CarsController < ApplicationController
                                 :drive_train,
                                 :year,
                                 :price,
+                                :condition,
                                 :description,
                                 images: [])
   end

@@ -9,10 +9,16 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
-    return if @order.user.eql?(current_user)
+    @order = Order.find_by(id: params[:id])
 
-    redirect_to orders_path, notice: 'Unauthorized'
+    if @order
+
+      return if @order.user.eql?(current_user)
+
+      redirect_to orders_path, notice: 'Unauthorized'
+    else
+      redirect_to orders_path, notice: 'Order Does not Exist'
+    end
   end
 
   def initialize_transaction
