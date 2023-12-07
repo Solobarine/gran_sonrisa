@@ -10,9 +10,44 @@ body {
   color-scheme: light dark;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
     'Helvetica Neue', sans-serif;
-  color: var(--text);
 }
 
-.notice {
+#notice,
+#alert {
+  color: #fff;
+  width: 100%;
+  max-width: 20em;
   position: absolute;
+  top: 1em;
+  padding: 0.3em 1em;
+  right: 1rem;
+  border-radius: 0.2em;
+}
+
+#notice {
+  background-color: var(--accent-three);
+}
+
+#alert {
+  background-color: var(--accent-one);
+}
+
+.empty_collection {
+  display: grid;
+  background-color: var(--secondary);
+  place-content: center;
+  grid-column: 1 / -1;
+  gap: 0.75em;
+  padding: 1.5em 0;
+  margin: 1.2em 1em;
+  border-radius: 0.5em;
+
+  p:first-child {
+    font-size: 1.3em;
+  }
+
+  p:last-child {
+    text-align: center;
+    font-size: 0.9em;
+  }
 }
