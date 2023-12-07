@@ -38,7 +38,7 @@ The car purchasing app described here utilizes a combination of technologies to 
 
 - **Devise**: Devise is a Ruby on Rails gem for seamless user authentication. It's flexible, secure, and customizable, making it easy to add features like user registration, password reset, and more to your web app. It supports multiple authentication strategies, and it's well-documented with a strong community.
 
-- **JavaScript:** JavaScript: Versatile web language, adds interactivity, manipulates DOM. High-level syntax, client-side scripting. Core for modern web development.
+- **JavaScript:** Versatile web language, adds interactivity, manipulates DOM. High-level syntax, client-side scripting. Core for modern web development.
 
 - **Paystack:** Nigerian fintech company, acquired by Stripe in 2020. Offers online payment solutions for businesses across Africa. Streamlines transactions, supports various payment methods, and enhances financial inclusivity.
 
@@ -58,12 +58,17 @@ The car purchasing app described here utilizes a combination of technologies to 
 ### 👥 Customer Features
 
 - **Extensive New Car Database**: Explore a vast collection of the latest new car models from a wide range of manufacturers. From compact cars to SUVs, electric vehicles to luxury sedans, find the perfect match for your preferences.
-- **Saved Favorites and Notifications**: Save your favorite cars to a personalized list for easy reference. Receive notifications when the price drops on a car you're interested in or when similar vehicles become available.
-- **Secure Payment Options**: Once you've found your ideal car, complete the purchase securely through the app. Make payments, sign contracts, and handle paperwork electronically to streamline the buying process.
+
+- **Saved Favorites**: Save your favorite cars to a personalized list for easy reference.
+
+- **Secure Payment Options**: Once you've found your ideal car, complete the purchase securely through the app. Make payments, and handle paperwork electronically to streamline the buying process.
+
 - **Detailed Specifications**: Access comprehensive specifications for each new car model, including performance details, fuel efficiency, safety features, technology integrations, and more.
+
 - **Transparent Transaction Process**: Receive a detailed breakdown of the costs associated with your new car purchase, including taxes, fees, and any additional add-ons. No hidden surprises.
 
 - **Delivery and After-Sales Services**: Coordinate the delivery of your new car to your preferred location. Access after-sales services, maintenance schedules, and support information through the app.
+
   Gran Sonrisa is not just an app; it's a comprehensive tool that empowers you to make well-informed decisions when purchasing a car. Say goodbye to the hassle of traditional car shopping and say hello to a modern, user-friendly, and efficient car purchasing experience with Gran Sonrisa.
 
 ### 👤 Admin Features
@@ -105,7 +110,6 @@ Follow these steps to set up Gran Sonrisa Car Purchasing App locally:
 3. Install Dependencies:
 
    ```bash
-   cd backend
    bundle install
    ```
 
@@ -116,7 +120,7 @@ Follow these steps to set up Gran Sonrisa Car Purchasing App locally:
    rails db:migrate
    ```
 
-5. Start the Servers:
+5. Start the Server:
 
 ```bash
 rails s
