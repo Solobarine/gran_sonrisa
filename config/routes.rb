@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'users#dashboard'
   post '/initialize', to: 'orders#initialize_transaction'
   post '/webhook', to: 'orders#webhook'
+  get '/callback/reference', to: 'orders#callback'
   resources :manufacturers
   resources :favourites, only: %i[index create destroy]
   resources :orders, only: %i[index show]
