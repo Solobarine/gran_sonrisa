@@ -6,12 +6,12 @@
         <div class="category">
           <div class="overlay"></div>
           <%= image_tag 'sportscar.jpg', alt: "Sportscar" %>
-          <a href="#">Brand New</a>
+          <%= link_to 'Brand New', '/category?condition=new' %>
         </div>
         <div class="category">
           <div class="overlay"></div>
           <%= image_tag 'suv.jpg', alt: "SUV" %>
-          <a href="#">Used</a>
+          <%= link_to 'Used', '/category?condition=used' %>
         </div>
       </div>
       <h2>Body</h2>
@@ -19,22 +19,22 @@
         <div class="category">
           <div class="overlay"></div>
           <%= image_tag 'sportscar.jpg', alt: "Sportscar" %>
-          <a href="#">Sportscar</a>
+          <%= link_to 'Used', '/category?body_type=sportscar' %>
         </div>
         <div class="category">
           <div class="overlay"></div>
           <%= image_tag 'suv.jpg', alt: "SUV" %>
-          <a href="#">SUV</a>
+          <%= link_to 'SUV', '/category?body_type=suv' %>
         </div>
         <div class="category">
           <div class="overlay"></div>
           <%= image_tag 'coupe.jpg', alt: "Coupe" %>
-          <a href="#">Coupe</a>
+          <%= link_to 'Coupe', '/category?body_type=coupe' %>
         </div>
         <div class="category">
           <div class="overlay"></div>
           <%= image_tag 'truck.jpg', alt: "Truck" %>
-          <a href="#">Trucks</a>
+          <%= link_to 'Trucks', '/category?body_type=trucks' %>
         </div>
       </div>
       <h2>Fuel Type</h2>
@@ -42,22 +42,22 @@
         <div class="category">
           <div class="overlay"></div>
           <%= image_tag 'electric.jpg', alt: "Electric" %>
-          <a href="#">Electric</a>
+          <%= link_to 'Electric', '/category?fuel_type=electric' %>
         </div>
         <div class="category">
           <div class="overlay"></div>
           <%= image_tag 'hybrid.jpg', alt: "Hybrid" %>
-          <a href="#">Hybrid</a>
+          <%= link_to 'Hybrid', '/category?fuel_type=hybrid' %>
         </div>
         <div class="category">
           <div class="overlay"></div>
           <%= image_tag 'truck.jpg', alt: "Diesel" %>
-          <a href="#">Diesel</a>
+          <%= link_to 'Diesel', '/category?fuel_type=diesel' %>
         </div>
         <div class="category">
           <div class="overlay"></div>
           <%= image_tag 'petrol.jpg', alt: "Petrol" %>
-          <a href="#">Petrol</a>
+          <%= link_to 'Petrol', '/category?fuel_type=petrol' %>
         </div>
       </div>
     </div>
