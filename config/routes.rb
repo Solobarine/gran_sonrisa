@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :cars
   get '/categories', to: 'cars#categories'
-  get '/categories/:id', to: 'cars#category'
+  get '/category', to: 'cars#category'
   get '/profile', to: 'users#show'
   patch '/profile', to: 'users#update'
   get '/dashboard', to: 'users#dashboard'
