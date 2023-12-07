@@ -1,6 +1,5 @@
 require 'httparty'
 require 'prawn'
-require 'openssl'
 
 # Controller for Orders
 class OrdersController < ApplicationController
@@ -70,46 +69,74 @@ class OrdersController < ApplicationController
   def webhook
     puts 'here'
     event = request.body.event
-    paystack_signature = request.headers['X-Paystack-Signature']
 
     # Verify Request
-    return unless verify(request.body, paystack_signature)
+    return unless verify(request.body)
 
     # Check Event Type
-    nil unless event.eql?('charge.success')
-
-    # Create Order
-    # create(request.body)
+    if event.eql?('charge.success')
+      # Create Order
+      create(request.body)
+    else
+      Order.where(reference: request.body.data.reference).first&.delete
+      render 'failed'
+    end
   end
+
+  def callback
+    # Check If Order Exist
+    @order = Order.find_by(reference: params[:reference])
+
+    if @order
+      @message = 'Your Transaction is being Processed'
+    else
+      redirect_to cars_path, notice: 'You do not have an Order'
+    end
+  end
+
+  def success; end
+
+  def fail; end
 
   private
 
   # Verify Request Coming From Paystack
-  def verify(request_body, paystack_signature)
-    secret_key = ENV['PAYSTACK_PRIVATE_KEY']
-    puts secret_key
-    digest = OpenSSL::Digest.new('sha512')
-    signature = OpenSSL::HMAC.hexdigest(digest, secret_key, request_body)
+  def verify(request_body)
+    reference = request_body.data.reference
 
-    # Verify if Signtures Matches
-    signature.eql?(paystack_signature)
+    url = "https://api.paystack.co/transaction/verify/#{reference}"
+
+    secret_key = ENV['PAYSTACK_PRIVATE_KEY']
+
+    headers = {
+      'Content-Type' => 'application/json',
+      'Authorization' => "Bearer #{secret_key}"
+    }
+
+    response = HTTParty.get(url, headers)
+
+    response['status'] === response['data']['status']
   end
 
   def create(request_body)
+    # Get Reference and Payment Method
     reference = request_body.data.reference
     payment_method = request_body.data.channel
+
     # Update Order to Complete
     order = Order.where(reference:)
     order.status = 'success'
     order.payment_method = payment_method
     order.save
 
-    # Create PDF Invoice
     # Mark Car as Sold
     mark_car_as_sold(order.car)
+
     # Send Email
     OrderMailer.with(order:).success.deliver_later
-    # Redirect to Purchases
+
+    # Render Success
+    render 'success'
   end
 
   # Mark Car as Sold

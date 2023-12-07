@@ -1,17 +1,19 @@
-ry<% content_for :dashboard_content do %>
+<% content_for :dashboard_content do %>
   <div id="content">
-    <div id='head'>
-      <h1><%= %> Cars</h1>
-    </div>
-    <div id="cars">
-      <% if @cars.empty? %>
-        <div class="empty_collection">
-          <p>Cars List is Empty</p>
-          <p>Contact Support Team</p>
-        </div>
-      <% else %>
-        <%= render 'car', collection: @cars %>
-      <% end %>
+    <div id="category">
+      <div id='head'>
+        <h1><%= params.values[0].capitalize %> Cars</h1>
+      </div>
+      <div id="cars">
+        <% if @cars.empty? %>
+          <div class="empty_collection">
+            <p>Cars List is Empty</p>
+            <p>Contact Support Team</p>
+          </div>
+        <% else %>
+          <%= render 'car', collection: @cars %>
+        <% end %>
+      </div>
     </div>
   </div>
 <% end %>
