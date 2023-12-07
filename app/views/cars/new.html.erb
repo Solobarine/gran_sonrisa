@@ -3,57 +3,105 @@
     <div id="new_car">
       <h1>New Car</h1>
       <%= form_with model: @car, id: 'new_car_form' do |f| %>
-        <div>
+        <div class='field'>
           <%= f.label 'Manufacturer'%>
-          <select name="manufacturer_id">
-            <% @manufacturers.each do |manufacturer| %>
-              <option value="<%= manufacturer.id%>"><%= manufacturer.name %></option>
-            <% end %>
-          </select>
+          <div>
+            <i class="fa-solid fa-industry"></i>
+            <select name="manufacturer_id">
+              <option value="">Select Manufacturer</option>
+              <% @manufacturers.each do |manufacturer| %>
+                <option value="<%= manufacturer.id%>"><%= manufacturer.name %></option>
+              <% end %>
+            </select>
+          </div>
         </div>
-        <div>
+        <div class='field'>
           <%= f.label 'Car Model'%>
-          <%= f.text_field :model, placeholder: 'Car Model...' %>
+          <div>
+            <i class="fa-solid fa-car"></i>
+            <%= f.text_field :model, placeholder: 'Car Model...' %>
+          </div>
         </div>
-        <div>
+        <div class='field'>
+          <%= f.label 'Condition'%>
+          <div>
+            <i class="fa-solid fa-circle-half-stroke"></i>
+            <select name="condition">
+              <option value="">Select Car Condition</option>
+              <option value="new">Brand New</option>
+              <option value="used">Used</option>
+            </select>
+          </div>
+        </div>
+        <div class='field'>
           <%= f.label 'Body Style'%>
-          <%= f.text_field :body_style, placeholder: 'e.g Sportcar' %>
+          <div>
+            <i class="fa-solid fa-car-side"></i>
+            <%= f.text_field :body_style, placeholder: 'e.g Sportcar' %>
+          </div>
         </div>
-        <div>
+        <div class='field'>
           <%= f.label 'Fuel Type'%>
-          <%= f.text_field :fuel_type, placeholder: 'e.g Electric' %>
+          <div>
+            <i class="fa-solid fa-gas-pump"></i>
+            <%= f.text_field :fuel_type, placeholder: 'e.g Electric' %>
+          </div>
         </div>
-        <div>
+        <div class='field'>
           <%= f.label 'Engine'%>
-          <%= f.text_field :engine, placeholder: 'e.g 240kW' %>
+          <div>
+            <i class="fa-solid fa-sliders"></i>
+            <%= f.text_field :engine, placeholder: 'e.g 240kW' %>
+          </div>
         </div>
-        <div>
+        <div class='field'>
           <%= f.label 'Transmission'%>
-          <%= f.text_field :transmission, placeholder: 'e.g Manual' %>
+          <div>
+            <i class="fa-solid fa-gear"></i>
+            <%= f.text_field :transmission, placeholder: 'e.g Manual' %>
+          </div>
         </div>
-        <div>
+        <div class='field'>
           <%= f.label 'Drive'%>
-          <%= f.text_field :drive_train, placeholder: 'e.g 4WD' %>
+          <div>
+            <i class="fa-solid fa-gears"></i>
+            <%= f.text_field :drive_train, placeholder: 'e.g 4WD' %>
+          </div>
         </div>
-        <div>
+        <div class='field'>
           <%= f.label 'Car Mileage'%>
-          <%= f.number_field :mileage, placeholder: 'e.g 130' %>
+          <div>
+            <i class="fa-solid fa-road"></i>
+            <%= f.number_field :mileage, placeholder: 'e.g 130' %>
+          </div>
         </div>
-        <div>
+        <div class='field'>
           <%= f.label 'Car Color'%>
-          <%= f.text_field :color, placeholder: 'e.g Green' %>
+          <div>
+            <i class="fa-solid fa-brush"></i>
+            <%= f.text_field :color, placeholder: 'e.g Green' %>
+          </div>
         </div>
-        <div>
+        <div class='field'>
           <%= f.label 'Year Released'%>
-          <%= f.number_field :year, placeholder: 'e.g 2021' %>
+          <div>
+            <i class="fa-solid fa-calendar"></i>
+            <%= f.number_field :year, placeholder: 'e.g 2021' %>
+          </div>
         </div>
-        <div>
+        <div class='field'>
           <%= f.label 'Price'%>
-          <%= f.number_field :price, placeholder: 'e.g 50000' %>
+          <div>
+            <i class="fa-solid fa-tags"></i>
+            <%= f.number_field :price, placeholder: 'e.g 50000' %>
+          </div>
         </div>
-        <div>
+        <div class='field'>
           <%= f.label :images %>
-          <%= f.file_field :images, multiple: true %>
+          <div>
+            <i class="fa-solid fa-images"></i>
+            <%= f.file_field :images, multiple: true %>
+          </div>
         </div>
         <div id="description">
           <%= f.label 'Enter Description' %>
