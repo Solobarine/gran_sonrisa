@@ -1,6 +1,18 @@
 ry<% content_for :dashboard_content do %>
   <div id="content">
-    <h1>Category</h1>
+    <div id='head'>
+      <h1><%= %> Cars</h1>
+    </div>
+    <div id="cars">
+      <% if @cars.empty? %>
+        <div class="empty_collection">
+          <p>Cars List is Empty</p>
+          <p>Contact Support Team</p>
+        </div>
+      <% else %>
+        <%= render 'car', collection: @cars %>
+      <% end %>
+    </div>
   </div>
 <% end %>
 <%= render template: 'layouts/dashboard'%>

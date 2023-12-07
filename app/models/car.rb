@@ -19,6 +19,7 @@ class Car < ApplicationRecord
   validates :price, presence: true, numericality: { only_integer: true }
   validates :description, presence: true, length: { maximum: 2000 }
   validates :sold, inclusion: { in: [true, false] }
+  validates :condition, inclusion: { in: %w[used new], message: '%<value>s is not a valid condition' }
 
   # Scopes
   scope :available, -> { where(sold: false) }

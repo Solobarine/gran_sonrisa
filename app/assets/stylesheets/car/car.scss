@@ -79,6 +79,7 @@
 /** CAR INDEX STYLES **/
 .car_container {
   display: grid;
+  color: var(--text);
 
   .cars {
     display: grid;
@@ -90,9 +91,13 @@
 
 /** NEW CAR STYLES **/
 #new_car {
-  max-width: 35em;
-  margin: auto;
+  width: 100%;
+  max-width: 40em;
+  border-radius: 0.5em;
+  margin: 2em auto;
   padding: 1em 0.5em;
+  background-color: var(--secondary);
+  color: var(--text);
 }
 
 #new_car_form {
@@ -101,29 +106,63 @@
   gap: 1em;
   grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
 
-  div {
+  ::placeholder,
+  option[selected] {
+    color: var(--text);
+    opacity: 0.8;
+  }
+
+  .field {
     display: grid;
     align-items: center;
     gap: 0.3em;
 
-    > *:is(input, select, textarea) {
-      padding: 0.8em;
-      border: 1px solid var(--accent-four);
-      border-radius: 0.7em;
-      outline: none;
-    }
+    > div {
+      position: relative;
+      display: grid;
 
-    ::placeholder {
-      color: var(--text);
-    }
+      i {
+        position: absolute;
+        background-color: var(--primary);
+        height: 100%;
+        width: 2em;
+        aspect-ratio: 1 / 1;
+        font-size: 1.3em;
+        color: #fff;
+        display: grid;
+        place-items: center;
+      }
 
-    select option {
-      color: var(--text);
+      input,
+      select {
+        border: none;
+        padding: 0.7em 3.5em;
+        padding-right: 1em;
+        background-color: var(--background);
+      }
+
+      *:is(input, select, textarea):active {
+        border: 1px solid var(--primary);
+      }
+
+      select option {
+        color: var(--text);
+      }
     }
   }
 
   div#description {
+    display: grid;
+    gap: 0.5em;
     grid-column: 1 / -1;
+
+    textarea {
+      padding: 0.8em;
+      border: 1px solid var(--accent-four);
+      border-radius: 0.7em;
+      background-color: var(--background);
+      outline: none;
+    }
   }
 
   button {
@@ -135,11 +174,6 @@
     color: var(--text);
     background-color: var(--primary);
     transition: 0.5s ease;
-  }
-
-  button:hover {
-    scale: 1.05;
-    box-shadow: 1em 0.6em 0.6em 0.6em var(--secondary);
   }
 }
 
@@ -357,6 +391,8 @@
 
 /** CATEGORIES STYLES **/
 #categories_section {
+  color: var(--text);
+
   h2 {
     margin: 1em 0;
     text-align: center;

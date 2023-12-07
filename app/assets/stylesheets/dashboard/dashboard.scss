@@ -115,6 +115,7 @@
   height: 100%;
   display: flex;
   flex-wrap: wrap;
+  color: var(--text);
 
   h1 {
     margin: 0.3em 0;
@@ -132,21 +133,31 @@
       border-radius: 0.75em;
 
       > div {
+        position: relative;
         display: grid;
-        gap: 0.7em;
+        gap: 1.5em;
         border-radius: 0.5em;
         border: 1px solid var(--accent-four);
         padding: 0.5em;
         background-color: var(--secondary);
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
 
         p:first-child {
-          font-size: 1.2em;
+          font-size: 1.1em;
           font-weight: 600;
         }
 
+        i {
+          position: absolute;
+          top: 0.2em;
+          right: 0.4em;
+          font-size: 2em;
+          color: var(--primary);
+        }
+
         p:last-child {
-          font-size: 1.5em;
-          font-weight: 900;
+          font-size: 1.3em;
+          font-weight: 700;
         }
       }
     }
@@ -202,9 +213,15 @@
             padding: 0.5em 0.3em;
             display: grid;
             grid-template-columns: 1fr 1fr;
+            border-bottom: 1px solid var(--secondary);
+
+            :first-child {
+              font-weight: 600;
+            }
 
             :last-child {
               text-align: right;
+              font-size: 1.2em;
             }
           }
         }

@@ -4,8 +4,12 @@ class ManufacturersController < ApplicationController
   end
 
   def show
-    @manufacturer = Manufacturer.find(params[:id])
-    @cars = @manufacturer.cars
+    @manufacturer = Manufacturer.find_by(id: params[:id])
+    if @manufacturer
+      @cars = @manufacturer.cars
+    else
+      redirect_to manufacturers_path, notice: 'Manufacturer not Avaliable'
+    end
   end
 
   def new
@@ -20,10 +24,8 @@ class ManufacturersController < ApplicationController
       redirect_to new_manufacturer_path, status: :unprocessable_entity
     end
   end
-  
 
-  def edit
-  end
+  def edit; end
 
   def destroy
     @manufacturer = Manufacturer.find(params[:id])
