@@ -80,12 +80,14 @@
 .car_container {
   display: grid;
   color: var(--text);
+  gap: 1em;
+  padding: 0 0.6em;
 
   .cars {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15em, 18em));
     gap: 1em 2em;
-    padding: 0.5em;
+    padding: 0.5em 0;
   }
 }
 
@@ -440,6 +442,20 @@
       a:hover {
         text-decoration: underline;
       }
+    }
+  }
+}
+
+#category {
+  padding: 0em 0;
+  color: var(--text);
+
+  #head {
+    padding: 4.5em 1em;
+    background: linear-gradient(var(--primary), var(--secondary), var(--accent-four));
+
+    h1 {
+      font-size: 2em;
     }
   }
 }
