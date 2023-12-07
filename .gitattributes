@@ -6,6 +6,5 @@ db/schema.rb linguist-generated
 # Mark any vendored files as having been vendored.
 vendor/* linguist-vendored
 
-*.js linguist-detectable=true
+
 *.rb linguist-detectable=true
-*.scss linguist-detectable=true
