@@ -21,21 +21,21 @@ class CarsController < ApplicationController
   def categories; end
 
   def category
-    @cars = Car.where(condition: params[:condition]) if params[:condition]
-
-    @cars = Car.where(body_style: params[:body_style]) if params[:body_style]
-
-    @cars = Car.where(fuel_type: params[:fuel_type]) if params[:fuel_type]
-
-    # return unless @cars.empty?
-
-    # redirect_to categories_path, notice: 'Category empty or Not Found'
+    if params[:condition]
+      @cars = Car.where(condition: params[:condition])
+      nil
+    elsif params[:body_style]
+      @cars = Car.where(body_style: params[:body_style])
+      nil
+    elsif params[:fuel_type]
+      @cars = Car.where(fuel_type: params[:fuel_type])
+      nil
+    else
+      redirect_to categories_path, notice: 'Category empty or Not Found'
+    end
   end
 
   def create
-    # if images_empty?
-    #   return redirect_to new_car_path
-    # end
     @manufacturer = Manufacturer.find_by(id: params[:manufacturer_id])
 
     return unless @manufacturer
