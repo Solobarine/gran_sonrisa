@@ -1,5 +1,6 @@
 @import './utilities/variables';
 @import './utilities/global';
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@200;300;400;500;600&family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,400;0,800;1,400;1,800&family=Sacramento&display=swap');
 
 .app {
   position: relative;
@@ -7,6 +8,7 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+  font-family: 'Poppins' 'Courier New', Courier, monospace;
 }
 
 .main_navigation {

@@ -1,21 +1,56 @@
 // EDIT USER STYLES
 #edit_user {
   padding: 1em 0.3em;
+
   #form_container {
     max-width: 25em;
+    margin: 0 auto;
   }
+
   form {
     display: grid;
-
     gap: 0.7em 2em;
+
     .field {
       display: grid;
-      gap: 0.5em;
+      align-items: center;
+      gap: 0.3em;
 
-      input {
-        padding: 1em;
-        border-radius: 0.5em;
+      > div {
+        position: relative;
+        display: grid;
+
+        i {
+          position: absolute;
+          background-color: var(--primary);
+          height: 100%;
+          width: 2em;
+          aspect-ratio: 1 / 1;
+          font-size: 1.3em;
+          color: #fff;
+          display: grid;
+          place-items: center;
+        }
+
+        input {
+          border: none;
+          padding: 0.7em 3.5em;
+          padding-right: 1em;
+          background-color: var(--secondary);
+        }
+
+        *:is(input, select, textarea):active {
+          border: 1px solid var(--primary);
+        }
+
+        select option {
+          color: var(--text);
+        }
       }
+    }
+
+    .field_with_errors {
+      display: grid;
     }
 
     #update {
@@ -26,6 +61,14 @@
       border: none;
       border-radius: 0.5em;
       padding: 1em 1.8em;
+    }
+
+    ul {
+      list-style: none;
+      color: var(--accent-one);
+      font-size: 0.9em;
+      font-weight: 600;
+      opacity: 1;
     }
   }
 
@@ -41,7 +84,7 @@
       font-weight: bold;
     }
 
-    button {
+    #open_modal {
       max-width: 12em;
       white-space: nowrap;
       margin-top: 1.4em;
@@ -51,6 +94,70 @@
       border: none;
       border-radius: 0.5em;
       padding: 1em 1.8em;
+    }
+
+    #confirmation {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 30em;
+      padding: 1em;
+      outline: none;
+      border: none;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 12px 28px 0px, rgba(0, 0, 0, 0.3) 0px 2px 4px 0px,
+        rgba(255, 255, 255, 0.15) 0px 0px 0px 1px inset;
+      padding-top: 3em;
+      border-radius: 0.4em;
+      z-index: 100;
+
+      ::backdrop {
+        pointer-events: none;
+        background-color: var(--primary);
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      p {
+        text-align: center;
+        color: var(--accent-one);
+        padding: 0.6em;
+      }
+
+      .exit {
+        position: absolute;
+        top: 0.5em;
+        right: 0.5em;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        font-size: 1.5em;
+        font-weight: 800px;
+        transition: 0.5s ease;
+      }
+
+      .exit:hover {
+        transition: 0.5s ease;
+        color: var(--accent-one);
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3em;
+
+        button {
+          text-align: center;
+          padding: 1em 2em;
+          border: none;
+          border-radius: 0.4em;
+          width: 8em;
+        }
+      }
     }
   }
 
@@ -65,5 +172,75 @@
 
   .go_back:hover {
     text-decoration: underline;
+  }
+}
+
+// CHANGE PASSWORD
+#update_password {
+  margin-top: 2em;
+  padding: 0 0.5em;
+
+  form {
+    width: 100%;
+    max-width: 40em;
+    margin: 0 auto;
+    padding: 2em 0.5em;
+    display: grid;
+    gap: 1em;
+    border-radius: 0.5em;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+      rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+
+    .field {
+      display: grid;
+      align-items: center;
+      gap: 0.3em;
+
+      > div {
+        position: relative;
+        display: grid;
+
+        i {
+          position: absolute;
+          background-color: var(--primary);
+          height: 100%;
+          width: 2em;
+          aspect-ratio: 1 / 1;
+          font-size: 1.3em;
+          color: #fff;
+          display: grid;
+          place-items: center;
+        }
+
+        input {
+          border: none;
+          padding: 0.7em 3.5em;
+          padding-right: 1em;
+          background-color: var(--secondary);
+        }
+
+        *:is(input, select, textarea):active {
+          border: 1px solid var(--primary);
+        }
+
+        select option {
+          color: var(--text);
+        }
+      }
+    }
+
+    .field_with_errors {
+      display: grid;
+    }
+
+    input[type='submit'] {
+      padding: 0.7em;
+      width: 12em;
+      color: var(--text);
+      background-color: var(--primary);
+      border-radius: 0.4em;
+      border: none;
+      outline: none;
+    }
   }
 }
