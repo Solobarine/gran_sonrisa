@@ -30,7 +30,8 @@ class OrdersController < ApplicationController
     body = {
       reference:,
       email: current_user.email,
-      amount: car.price
+      amount: car.price,
+      callback_url: "https://gran-sonrisa.onrender.com/callback/#{reference}"
     }.to_json
 
     headers = {
