@@ -1,0 +1,41 @@
+#settings {
+  display: flex;
+  gap: 0 1.2em;
+  flex-wrap: wrap;
+  padding: 1em 0;
+
+  #settings_menu {
+    flex-basis: 12em;
+    margin: 0 0.5em;
+    border-radius: 0.5em;
+    flex-shrink: 0;
+    padding: 1em;
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, min(10em));
+    grid-auto-rows: 2em;
+    gap: 1em;
+    max-height: 20em;
+    background-color: var(--primary);
+    place-items: start;
+
+    a {
+      text-decoration: none;
+      width: 100%;
+      padding: 0.5em;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.4em;
+      background-color: var(--primary);
+    }
+
+    a.active {
+      color: var(--highlight);
+    }
+  }
+
+  #content {
+    flex-grow: 100000;
+  }
+}

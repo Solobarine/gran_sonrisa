@@ -6,14 +6,27 @@ Rails.application.routes.draw do
   get '/', to: 'home#index'
   devise_for :users
   resources :cars
+
+  # Categories Routes
   get '/categories', to: 'cars#categories'
   get '/category', to: 'cars#category'
+
+  # User Profile
   get '/profile', to: 'users#show'
   patch '/profile', to: 'users#update'
+  get '/user/settings', to: 'users#settings'
+
+  # Password Update
+  get '/user/settings/update-password', to: 'users#update_password'
+  patch '/user/settings/password', to: 'users#password'
+
+  # Dashboard
   get '/dashboard', to: 'users#dashboard'
+
+  # Paystack
   post '/initialize', to: 'orders#initialize_transaction'
   post '/webhook', to: 'orders#webhook'
-  get '/callback/reference', to: 'orders#callback'
+  get '/callback/:reference', to: 'orders#callback'
   resources :manufacturers
   resources :favourites, only: %i[index create destroy]
   resources :orders, only: %i[index show]

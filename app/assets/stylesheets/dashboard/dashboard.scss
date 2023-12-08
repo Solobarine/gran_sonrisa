@@ -67,7 +67,6 @@
 
   #content {
     flex-grow: 1;
-    // padding-right: 1em;
   }
 
   // Media Query for Small Screens
@@ -103,7 +102,7 @@
 
     #content {
       min-height: 95vh;
-      padding-top: 2em;
+      padding-top: 1em;
       padding-right: 0;
     }
   }

@@ -43,15 +43,15 @@
       <i class="fa-solid fa-id-card"></i>
       <p>Profile</p>
     <% end %>
-    <a href="#" class="menu_link">
+    <%= link_to(user_settings_path, class: "menu_link #{is_active?(user_settings_path)}") do %>
       <i class="fa-solid fa-screwdriver-wrench"></i>
       <p>Settings</p>
-    </a>
+    <% end %>
   </div>
-  <a href="#" class="logout_link">
+  <%= link_to(destroy_user_session_path) do %>
     <i class="fa-solid fa-right-from-bracket"></i>
     <p>Logout</p>
-  </a>
+  <% end %>
 </div>
 <script defer>
   const toggle = document.getElementById('menu_toggle')
