@@ -23,6 +23,16 @@ class UsersController < ApplicationController
     redirect_to cars_path unless current_user.admin
   end
 
+  def password; end
+
+  def update_password
+    @user = current_user
+  end
+
+  def settings
+    redirect_to edit_user_registration_path
+  end
+
   private
 
   def avatar_empty?
