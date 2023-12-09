@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   patch '/profile', to: 'users#update'
   get '/user/settings', to: 'users#settings'
 
+  get '/about', to: 'home#about_us'
+  get '/contact-us', to: 'home#contact_us'
+  post '/message', to: 'home#message'
+
   # Password Update
   get '/user/settings/update-password', to: 'users#update_password'
   patch '/user/settings/password', to: 'users#password'

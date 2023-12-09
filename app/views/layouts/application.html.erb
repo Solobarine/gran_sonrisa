@@ -22,17 +22,19 @@
         <div class="main_links">
           <div id="themeBtn">
           </div>
+          <%= link_to 'Contact Us', contact_us_path, class: "#{is_active?(contact_us_path)}" %>
+          <%= link_to 'About Us', about_path, class: "#{is_active?(about_path)}" %>
           <% if current_user %>
             <% if current_user.avatar.representable? %>
               <%= image_tag current_user.avatar, alt: current_user.first_name %>
             <% else %>
               <%= link_to current_user.first_name[0], profile_path, id: 'user_logo' %>
             <% end %>
-            <%= link_to 'Cars', cars_path %>
+            <%= link_to 'Cars', cars_path, class: "#{is_active?(cars_path)}" %>
             <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
           <% else %>
-            <%= link_to 'Login', new_user_session_path %>
-            <%= link_to 'Register', new_user_registration_path %>
+            <%= link_to 'Login', new_user_session_path, class: "#{is_active?(new_user_session_path)}" %>
+            <%= link_to 'Register', new_user_registration_path, class: "#{is_active?(new_user_registration_path)}" %>
           <% end %>
         </div>
       </nav>

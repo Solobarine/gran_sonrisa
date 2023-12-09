@@ -1,0 +1,55 @@
+<section id="contact_us">
+  <div>
+    <h3>Let's get Started</h3>
+    <small>We're open to any suggestions or just to have a chat.</small>
+    <div id='handles'>
+      <div class="handle">
+        <i class="fa-solid fa-location-dot"></i>
+        <small>123 Oak Street
+          Cityville, State 54321
+          Nigeria</small>
+      </div>
+      <div class="handle">
+        <i class="fa-solid fa-phone"></i>
+        <small>+1 (555) 123-4567</small>
+      </div>
+      <div class="handle">
+        <i class="fa-solid fa-envelope"></i>
+        <small>Email: solobarine@gmail.com</small>
+      </div>
+      <div class="handle">
+        <i class="fa-solid fa-earth-americas"></i>
+        <small>Website: solly-portfolio.vercel.app</small>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div id="form_container">
+      <%= form_with url: message_path, method: :post do |f| %>
+        <h3>Get in Touch</h3>
+        <div class="field">
+          <div>
+            <i class="fa-solid fa-user"></i>
+            <%= f.text_field :name, placeholder: 'Name' %>
+          </div>
+        </div>
+        <div class="field">
+          <div>
+            <i class="fa-solid fa-envelope"></i>
+            <%= f.email_field :email, placeholder: 'Email' %>
+          </div>
+        </div>
+        <div class="field subject">
+          <div>
+            <i class="fa-solid fa-pen-nib"></i>
+            <%= f.text_field :subject, placeholder: 'Subject' %>
+          </div>
+        </div>
+        <div class="description">
+          <%= f.text_area :message, size: '30x10', placeholder: 'Your Message' %>
+        </div>
+        <%= f.submit 'Send Message' %>
+      <% end %>
+    </div>
+  </div>
+</section>

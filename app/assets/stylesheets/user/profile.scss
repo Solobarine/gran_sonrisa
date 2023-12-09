@@ -3,6 +3,7 @@
 #profile {
   max-width: 50em;
   padding: 1em 0.5em;
+  color: var(--text);
   #img_container {
     display: flex;
     gap: 2em;
@@ -85,6 +86,8 @@
 
       ion-icon {
         font-size: 2em;
+        stroke-width: 1px;
+        fill: var(--primary);
       }
 
       :last-child {
@@ -109,8 +112,6 @@
   }
 
   #edit_profile_link:hover {
-    box-shadow:
-      1px 3px 5px var(--secondary),
-      3px 4px 3px var(--highlight);
+    box-shadow: 1px 3px 5px var(--secondary), 3px 4px 3px var(--highlight);
   }
 }

@@ -12,7 +12,7 @@
         <% end %>
         <%= form_with method: :patch, url: profile_path, id: 'update_avatar', multipart: true do |f| %>
           <div id='upload_avatar'>
-            <ion-icon name="cloud-upload-outline"></ion-icon>
+            <ion-icon name="cloud-upload"></ion-icon>
             <p>Choose Your Avatar</p>
           </div>
           <%= f.file_field :avatar %>
@@ -22,35 +22,35 @@
       </div>
       <div id="details">
         <div class="info">
-          <ion-icon name="person-circle-outline"></ion-icon>
+          <ion-icon name="person-circle"></ion-icon>
           <p>First Name</p>
           <p>
             <b><%= current_user.first_name %></b>
           </p>
         </div>
         <div class="info">
-          <ion-icon name="person-circle-outline"></ion-icon>
+          <ion-icon name="person-circle"></ion-icon>
           <p>Last Name</p>
           <p>
             <b><%= current_user.last_name %></b>
           </p>
         </div>
         <div class="info">
-          <ion-icon name="mail-open-outline"></ion-icon>
+          <ion-icon name="mail-open"></ion-icon>
           <p>Email</p>
           <p>
             <b><%= current_user.email %></b>
           </p>
         </div>
         <div class="info">
-          <ion-icon name="star-outline"></ion-icon>
+          <ion-icon name="star"></ion-icon>
           <p>Favourites</p>
           <p>
             <b><%= pluralize(current_user.favourites.count, 'Favourite Car')%></b>
           </p>
         </div>
         <div class="info">
-          <ion-icon name="car-sport-outline"></ion-icon>
+          <ion-icon name="car-sport"></ion-icon>
           <p>Completed Orders</p>
           <p>
             <b><%= pluralize(0, 'Order') %></b>
@@ -58,13 +58,13 @@
         </div>
         <div class="info">
           <% if current_user.admin %>
-            <ion-icon name="id-card-outline"></ion-icon>
+            <ion-icon name="id-card"></ion-icon>
             <p>User Type</p>
             <p>
               <b>Admin</b>
             </p>
           <% else %>
-            <ion-icon name="person-outline"></ion-icon>
+            <ion-icon name="person"></ion-icon>
             <p>User Type</p>
             <p>
               <b>Customer</b>
